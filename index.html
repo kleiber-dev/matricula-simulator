@@ -146,7 +146,7 @@
             font-weight: bold;
         }
 
-        select, input[type="text"], input[type="button"] {
+        select, input[type="text"], input[type="button"], input[type="date"], input[type="email"], input[type="file"] {
             padding: 4px;
             border: 1px solid #aaa;
             border-radius: 3px;
@@ -219,15 +219,24 @@
             padding: 15px;
             margin-bottom: 15px;
             border: 1px solid #ccc;
+            border-radius: 8px;
         }
         legend {
             font-weight: bold;
             padding: 0 10px;
+            color: #004080;
         }
         .bloco {
             display: inline-block;
-            width: 150px;
-            margin: 5px 0;
+            width: 180px;
+            margin: 8px 0;
+            font-weight: bold;
+        }
+        .blocoEndereco {
+            display: inline-block;
+            width: 100px;
+            margin: 8px 0;
+            font-weight: bold;
         }
         #formPreMatricula {
             max-height: 500px;
@@ -247,6 +256,36 @@
             background: #28a745;
             color: white;
             border: none;
+        }
+        .radio-grupo {
+            display: flex;
+            gap: 20px;
+            margin-top: 5px;
+        }
+        .radio-label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: normal;
+        }
+        .arquivo_tip {
+            display: block;
+            font-size: 10px;
+            color: #666;
+            margin-top: 5px;
+        }
+        .obrigatorio {
+            color: #d32f2f;
+        }
+        .botaoPesquisa {
+            background: #ff9800;
+            color: white;
+            border: none;
+            padding: 4px 12px;
+            cursor: pointer;
+        }
+        .botaoPesquisa:hover {
+            background: #f57c00;
         }
     </style>
 </head>
@@ -335,28 +374,184 @@
                             </ul>
                         </div>
 
-                        <!-- DADOS PESSOAIS -->
+                        <!-- DADOS PESSOAIS - VERSÃO COMPLETA COM CAPTCHA, ENDEREÇO, CONTATO -->
                         <div id="divDadosPessoais" class="content_abas">
-                            <fieldset><legend>Dados da Oferta</legend>
+                            <fieldset>
+                                <legend>Dados da Oferta</legend>
                                 <div><label class="bloco">Município:</label> <input type="text" value="GOIANÉSIA DO PARÁ" readonly></div>
                                 <div><label class="bloco">Unidade de Ensino:</label> <input type="text" value="IFPA - CAMPUS TUCURUÍ" readonly></div>
                                 <div><label class="bloco">Oferta de Turma:</label> <input type="text" value="AGENTE DE DESENVOLVIMENTO COOPERATIVISTA N1/2026" readonly></div>
                                 <div><label class="bloco">Código da Oferta:</label> <input type="text" value="4029" readonly></div>
                             </fieldset>
-                            <fieldset><legend>Dados do Aluno</legend>
-                                <div><label class="bloco">CPF *:</label> <input type="text" id="aluno_cpf" placeholder="Digite o CPF"></div>
-                                <div><label class="bloco">Nome Completo *:</label> <input type="text" id="aluno_nome"></div>
-                                <div><label class="bloco">Data Nascimento:</label> <input type="date" id="aluno_dt_nascimento"></div>
-                                <div><label class="bloco">Nome da Mãe:</label> <input type="text" id="aluno_nome_mae"></div>
-                                <div><label class="bloco">Sexo:</label> <select id="aluno_sexo"><option>Feminino</option><option>Masculino</option></select></div>
+
+                            <!-- Dados do Aluno - Versão completa -->
+                            <fieldset id="fieldDadosDoAluno">
+                                <legend>Dados do Aluno</legend>
+                                <div>
+                                    <label class="bloco" for="aluno_cpf">CPF: <span class="obrigatorio">*</span></label>
+                                    <input class="campo" id="aluno_cpf" name="aluno_cpf" type="text" value="" maxlength="14" placeholder="000.000.000-00">
+                                </div>
+                                
+                                <!-- CAPTCHA Simulado -->
+                                <div>
+                                    <div id="aluno_captchaContent">
+                                        <img id="captchaImage" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='50' viewBox='0 0 200 50'%3E%3Crect width='200' height='50' fill='%23333'/%3E%3Ctext x='20' y='35' font-family='monospace' font-size='28' fill='%23ff9800' font-weight='bold'%3ES4T3C%3C/text%3E%3C/svg%3E" alt="Captcha"><br>
+                                    </div>
+                                    <img id="aluno_captchaImg" alt="Recarregar imagem" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23555' stroke-width='2'%3E%3Cpath d='M23 4v6h-6M1 20v-6h6'/%3E%3Cpath d='M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15'/%3E%3C/svg%3E" style="cursor:pointer; margin-top:5px;" onclick="refreshCaptcha()">
+                                </div>
+                                <div>
+                                    <label class="bloco" for="aluno_captcha">Preencha com o conteúdo da imagem: <span class="obrigatorio">*</span></label>
+                                    <input class="campo" type="text" id="aluno_captcha" name="aluno_captcha" maxlength="6" placeholder="Código da imagem" style="width:150px;">
+                                    <button type="button" id="aluno_captcha_button" class="botaoPesquisa" title="Buscar dados WebService Receita" onclick="simularBusca()">Buscar</button>
+                                </div>
+                                
+                                <div>
+                                    <label class="bloco" for="aluno_pis">NIS/PIS:</label>
+                                    <input class="campo" type="text" maxlength="29" id="aluno_pis" name="aluno_pis" value="" style="width:300px;">
+                                </div>
+                                <div>
+                                    <label class="bloco" for="aluno_nome_completo">Nome Completo: <span class="obrigatorio">*</span></label>
+                                    <input class="campo" type="text" maxlength="160" id="aluno_nome_completo" name="aluno_nome_completo" value="" style="width:400px;">
+                                </div>
+                                <div id="divCadNomeSocial">
+                                    <label class="bloco">Cadastrar Nome Social: <span class="obrigatorio">*</span></label>
+                                    <span class="radio-grupo">
+                                        <label class="radio-label" for="isCadastrarNomeSocial">
+                                            <input type="radio" value="1" class="radioCadastrarNomeSocial campo" id="isCadastrarNomeSocial" name="cadastrar_no_social"> Sim
+                                        </label>
+                                        <label class="radio-label" for="notCadastrarNomeSocial">
+                                            <input type="radio" value="0" class="radioCadastrarNomeSocial campo" id="notCadastrarNomeSocial" name="cadastrar_no_social" checked=""> Não
+                                        </label>
+                                    </span>
+                                </div>
+                                <div id="box_nome_social" style="display: none;">
+                                    <div>
+                                        <label class="bloco" for="aluno_nome_social">Nome Social <span class="obrigatorio">*</span></label>
+                                        <input class="campo" type="text" id="aluno_nome_social" name="no_social" maxlength="150" value="" style="width:400px;">
+                                    </div>
+                                    <div>
+                                        <label class="bloco" for="aluno_nome_social_anexo">Documento(s) Comprobatório(s):</label>
+                                        <input class="campo" id="aluno_nome_social_anexo" type="file" name="anexos[]" accept="image/jpeg,image/gif,image/png,application/pdf">
+                                        <span class="arquivo_tip">Tamanho Máximo: 2MB | Formatos: PDF, JPG, PNG</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="bloco" for="aluno_dt_nascimento">Data de Nascimento: <span class="obrigatorio">*</span></label>
+                                    <input class="campo" type="date" id="aluno_dt_nascimento" name="aluno_dt_nascimento" value="">
+                                </div>
+                                <div>
+                                    <label class="bloco">Sexo: <span class="obrigatorio">*</span></label>
+                                    <span class="radio-grupo">
+                                        <label><input type="radio" value="F" name="aluno_sexo"> Feminino</label>
+                                        <label><input type="radio" value="M" name="aluno_sexo"> Masculino</label>
+                                    </span>
+                                </div>
+                                <div>
+                                    <label class="bloco" for="aluno_nome_mae">Nome da Mãe: <span class="obrigatorio">*</span></label>
+                                    <input class="campo" type="text" maxlength="160" id="aluno_nome_mae" name="aluno_nome_mae" value="" style="width:400px;">
+                                </div>
+                                <div>
+                                    <label class="bloco" for="aluno_nome_pai">Nome do Pai:</label>
+                                    <input class="campo" type="text" maxlength="160" id="aluno_nome_pai" name="aluno_nome_pai" value="" style="width:400px;">
+                                </div>
+                                <div>
+                                    <label class="bloco" for="aluno_naturalidade">Naturalidade:</label>
+                                    <input class="campo" type="text" maxlength="60" id="aluno_naturalidade" name="aluno_naturalidade" value="">
+                                </div>
+                                <div>
+                                    <label class="bloco" for="aluno_identidade">Identidade:</label>
+                                    <input class="campo" type="text" maxlength="30" id="aluno_identidade" name="aluno_identidade" value="">
+                                </div>
+                                <div>
+                                    <label class="bloco" for="aluno_orgao_expeditor">Órgão Expedidor:</label>
+                                    <input class="campo" type="text" maxlength="30" id="aluno_orgao_expeditor" name="aluno_orgao_expeditor" value="">
+                                </div>
+                                <div>
+                                    <label class="bloco" for="aluno_cor_pele">Cor da pele e/ou raça: <span class="obrigatorio">*</span></label>
+                                    <select class="campo" id="aluno_cor_pele" name="aluno_cor_pele">
+                                        <option value="">Selecione...</option>
+                                        <option value="4">Amarela</option>
+                                        <option value="1">Branca</option>
+                                        <option value="5">Indígena</option>
+                                        <option value="3">Parda</option>
+                                        <option value="2">Preta</option>
+                                        <option value="6">Sem declaração</option>
+                                    </select>
+                                </div>
+                            </fieldset>
+
+                            <!-- Endereço Residencial -->
+                            <fieldset id="fieldEnderecoResidencial">
+                                <legend>Endereço Residencial</legend>
+                                <div>
+                                    <label class="bloco" for="aluno_cep">CEP: <span class="obrigatorio">*</span></label>
+                                    <input class="campo" type="text" id="aluno_cep" name="aluno_cep" maxlength="9" placeholder="00000-000">
+                                </div>
+                                <div>
+                                    <label class="bloco" for="aluno_logradouro">Endereço: <span class="obrigatorio">*</span></label>
+                                    <input class="campo" type="text" maxlength="200" id="aluno_logradouro" name="aluno_logradouro" style="width:500px;">
+                                </div>
+                                <div>
+                                    <label class="bloco" for="aluno_bairro">Bairro: <span class="obrigatorio">*</span></label>
+                                    <input class="campo" type="text" maxlength="100" id="aluno_bairro" name="aluno_bairro" style="width:300px;">
+                                </div>
+                                <div>
+                                    <label class="bloco" for="aluno_uf">UF: <span class="obrigatorio">*</span></label>
+                                    <select class="campo" id="aluno_uf" name="aluno_uf" onchange="carregarMunicipiosForm()">
+                                        <option value="">SELECIONE...</option>
+                                        <option value="AC">AC - Acre</option><option value="AL">AL - Alagoas</option>
+                                        <option value="AM">AM - Amazonas</option><option value="AP">AP - Amapá</option>
+                                        <option value="BA">BA - Bahia</option><option value="CE">CE - Ceará</option>
+                                        <option value="DF">DF - Distrito Federal</option><option value="ES">ES - Espírito Santo</option>
+                                        <option value="GO">GO - Goiás</option><option value="MA">MA - Maranhão</option>
+                                        <option value="MG">MG - Minas Gerais</option><option value="MS">MS - Mato Grosso do Sul</option>
+                                        <option value="MT">MT - Mato Grosso</option><option value="PA">PA - Pará</option>
+                                        <option value="PB">PB - Paraíba</option><option value="PE">PE - Pernambuco</option>
+                                        <option value="PI">PI - Piauí</option><option value="PR">PR - Paraná</option>
+                                        <option value="RJ">RJ - Rio de Janeiro</option><option value="RN">RN - Rio Grande do Norte</option>
+                                        <option value="RO">RO - Rondônia</option><option value="RR">RR - Roraima</option>
+                                        <option value="RS">RS - Rio Grande do Sul</option><option value="SC">SC - Santa Catarina</option>
+                                        <option value="SE">SE - Sergipe</option><option value="SP">SP - São Paulo</option>
+                                        <option value="TO">TO - Tocantins</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="bloco" for="aluno_municipio">Município: <span class="obrigatorio">*</span></label>
+                                    <select class="campo" id="aluno_municipio" name="aluno_municipio">
+                                        <option value="">SELECIONE...</option>
+                                    </select>
+                                </div>
+                            </fieldset>
+
+                            <!-- Contato -->
+                            <fieldset id="fieldContato">
+                                <legend>Contato</legend>
+                                <div>
+                                    <label class="bloco" for="aluno_telefone">Telefone de Contato: <span class="obrigatorio">*</span></label>
+                                    <input class="campo" type="text" maxlength="15" id="aluno_telefone" name="aluno_telefone" placeholder="(00) 0000-0000">
+                                </div>
+                                <div>
+                                    <label class="bloco" for="aluno_celular">Telefone Celular:</label>
+                                    <input class="campo" type="text" maxlength="15" id="aluno_celular" name="aluno_celular" placeholder="(00) 00000-0000">
+                                </div>
+                                <div>
+                                    <label class="bloco" for="aluno_comercial">Telefone Comercial:</label>
+                                    <input class="campo" type="text" maxlength="15" id="aluno_comercial" name="aluno_comercial">
+                                </div>
+                                <div>
+                                    <label class="bloco" for="aluno_email">E-mail:</label>
+                                    <input class="campo" type="email" maxlength="200" id="aluno_email" name="aluno_email" placeholder="exemplo@dominio.com" style="width:300px;">
+                                </div>
                             </fieldset>
                         </div>
+
                         <!-- ESCOLARIDADE -->
                         <div id="divEscolaridade" class="content_abas abas_hidden">
                             <fieldset><legend>Nível de Escolaridade</legend>
                                 <div><label class="bloco">Escolaridade *:</label> <select><option>Ensino Médio - Completo</option><option>Ensino Médio - Incompleto</option></select></div>
                             </fieldset>
                         </div>
+
                         <!-- PERFIL -->
                         <div id="divPerfil" class="content_abas abas_hidden">
                             <fieldset><legend>Perfil do Aluno</legend>
@@ -364,6 +559,7 @@
                                 <div><label class="bloco">Renda familiar?</label> <select><option>Até 1 salário mínimo</option><option>Mais de 1 salário</option></select></div>
                             </fieldset>
                         </div>
+
                         <!-- CONFIRMAÇÃO -->
                         <div id="divConfirmacao" class="content_abas abas_hidden">
                             <fieldset><legend>Confirme os dados</legend>
@@ -385,7 +581,7 @@
 </div>
 
 <script>
-    // SIMULAÇÃO COMPLETA DO FLUXO DE 10 PASSOS
+    // SIMULAÇÃO COMPLETA DO FLUXO
     (function() {
         // Elementos principais
         const abaBolsa = document.getElementById('bolsaFormacaoIdapp');
@@ -412,31 +608,88 @@
             divConfirmacao: document.getElementById('divConfirmacao')
         };
 
-        let step = 0; // Controle de navegação do formulário
+        let step = 0;
+
+        // Nome Social: mostrar/esconder
+        const radioSim = document.getElementById('isCadastrarNomeSocial');
+        const radioNao = document.getElementById('notCadastrarNomeSocial');
+        const boxNomeSocial = document.getElementById('box_nome_social');
+        
+        if(radioSim && radioNao) {
+            radioSim.addEventListener('change', () => { 
+                if(radioSim.checked) boxNomeSocial.style.display = 'block'; 
+            });
+            radioNao.addEventListener('change', () => { 
+                if(radioNao.checked) boxNomeSocial.style.display = 'none'; 
+            });
+        }
+
+        // Captcha Simulado
+        window.refreshCaptcha = function() {
+            const randomCode = Math.random().toString(36).substring(2, 8).toUpperCase();
+            const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='200' height='50'><rect width='200' height='50' fill='#333'/><text x='20' y='35' font-family='monospace' font-size='28' fill='#ff9800' font-weight='bold'>${randomCode}</text></svg>`;
+            const captchaImage = document.getElementById('captchaImage');
+            if(captchaImage) {
+                captchaImage.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
+            }
+            const captchaInput = document.getElementById('aluno_captcha');
+            if(captchaInput) {
+                captchaInput.dataset.captchaReal = randomCode;
+            }
+        };
+        
+        window.simularBusca = function() {
+            const captchaDigitado = document.getElementById('aluno_captcha').value;
+            const captchaReal = document.getElementById('aluno_captcha').dataset.captchaReal || 'S4T3C';
+            if(captchaDigitado.toUpperCase() === captchaReal) {
+                alert('✅ Captcha válido! Simulando preenchimento automático via WebService.');
+                document.getElementById('aluno_nome_completo').value = 'ALUNO TESTE AUTOMATIZADO';
+                document.getElementById('aluno_nome_mae').value = 'MARIA DA SILVA TESTE';
+                document.getElementById('aluno_dt_nascimento').value = '1990-01-01';
+            } else {
+                alert('❌ Captcha inválido. Tente novamente com o código: ' + captchaReal);
+            }
+        };
+        
+        // Carregar municípios simulados no formulário
+        window.carregarMunicipiosForm = function() {
+            const uf = document.getElementById('aluno_uf').value;
+            const municipioSelect = document.getElementById('aluno_municipio');
+            if(municipioSelect) {
+                municipioSelect.innerHTML = '<option value="">SELECIONE...</option>';
+                if(uf) {
+                    const cidades = [`${uf} - Cidade A`, `${uf} - Cidade B`, `${uf} - Capital`];
+                    cidades.forEach(c => {
+                        const option = document.createElement('option');
+                        option.value = c;
+                        option.textContent = c;
+                        municipioSelect.appendChild(option);
+                    });
+                }
+            }
+        };
 
         // 1. Clicar na aba "Bolsa Formação"
         if(abaBolsa) {
             abaBolsa.addEventListener('click', function(e) {
                 e.preventDefault();
-                // Simula a geração dinâmica do menu
                 menuLateralTitle.style.display = 'block';
                 menuContainer.style.display = 'block';
-                // Atualiza aba ativa visualmente
                 document.querySelectorAll('.abaPrincipal').forEach(li => li.classList.remove('abaAtivaEsquerda'));
                 document.getElementById('bolsaFormacaoIdappLi').classList.add('abaAtivaEsquerda');
-                console.log('[SIMULADOR] Passo 1: Aba Bolsa Formação clicada. Menu exibido.');
+                console.log('[SIMULADOR] Passo 1: Aba Bolsa Formação clicada.');
             });
         }
 
-        // 2. Clicar em "Matrícula" e mostrar submenu
+        // 2. Clicar em "Matrícula"
         if(matriculaLink) {
             matriculaLink.addEventListener('click', function() {
                 if(subMenu) subMenu.style.display = 'block';
-                console.log('[SIMULADOR] Passo 2: Matrícula clicado. Submenu exibido.');
+                console.log('[SIMULADOR] Passo 2: Matrícula clicado.');
             });
         }
 
-        // 3. Clicar em "Cadastrar Pré-Matrícula" -> Atualizar painel "Onde Estou" e mostrar formulário de pesquisa
+        // 3. Clicar em "Cadastrar Pré-Matrícula"
         if(cadastrarPreMatricula) {
             cadastrarPreMatricula.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -447,7 +700,7 @@
             });
         }
 
-        // 4 e 5. Popular município baseado na UF (simulação)
+        // 4 e 5. Popular município baseado na UF
         function popularMunicipios() {
             const ufValue = selectUF.value;
             if(ufValue === 'PA') {
@@ -457,17 +710,13 @@
             }
         }
         selectUF.addEventListener('change', popularMunicipios);
-        // Inicializa vazio
         selectMunicipio.innerHTML = '<option value="">SELECIONE...</option>';
 
         // 6 e 7. Pesquisar e carregar a tabela
         function carregarTabela() {
             const ufSelecionada = selectUF.value;
             const municipioSelecionado = selectMunicipio.value;
-            const textoMunicipio = selectMunicipio.options[selectMunicipio.selectedIndex]?.text || '';
-
             if(ufSelecionada === 'PA' && municipioSelecionado === '1503093') {
-                // Gera a linha exatamente como no HTML original
                 const linha = `
                     <tr class="altRow">
                         <td><div>INSTITUTO FEDERAL DO PARÁ - CAMPUS TUCURUÍ</div></td>
@@ -481,7 +730,7 @@
                         <td><div><span style="color:darkGreen;">0</span> / <span style="color:Orange;">0</span> / <span style="color:red;">15</span></div></td>
                         <td style="text-align: center;">
                             <div style="margin:0 auto; width:82px;">
-                                <img style="width:18px; cursor:pointer;" title="Botão para cadastrar aluno." src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='green'%3E%3Cpath d='M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'/%3E%3C/svg%3E" id="btnCadastrarAlunoSimulado">
+                                <img style="width:18px; cursor:pointer;" title="Cadastrar aluno" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='green'%3E%3Cpath d='M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'/%3E%3C/svg%3E" id="btnCadastrarAlunoSimulado">
                                 <img style="width:18px;" title="Detalhar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='blue'%3E%3Cpath d='M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z'/%3E%3C/svg%3E">
                             </div>
                         </td>
@@ -489,36 +738,33 @@
                 `;
                 gridBody.innerHTML = linha;
                 tabelaGrid.style.display = 'table';
-
-                // Adiciona evento ao botão de cadastrar (simula passo 9)
                 const btnCadastrar = document.getElementById('btnCadastrarAlunoSimulado');
                 if(btnCadastrar) {
                     btnCadastrar.addEventListener('click', function() {
                         abrirFormularioPreMatricula();
                     });
                 }
-                console.log('[SIMULADOR] Passo 7 e 8: Tabela carregada com sucesso.');
+                console.log('[SIMULADOR] Passo 7 e 8: Tabela carregada.');
             } else {
-                gridBody.innerHTML = '<tr><td colspan="10">Nenhum resultado encontrado. Selecione PA e GOIANÉSIA DO PARÁ.</td></tr>';
+                gridBody.innerHTML = '<tr><td colspan="10">Nenhum resultado. Selecione PA e GOIANÉSIA DO PARÁ.</td></tr>';
                 tabelaGrid.style.display = 'table';
             }
         }
-
         botaoPesquisar.addEventListener('click', carregarTabela);
 
-        // 9 e 10. Abrir formulário de pré-matrícula (simula o painel com abas)
+        // 9 e 10. Abrir formulário
         function abrirFormularioPreMatricula() {
             telaPesquisa.style.display = 'none';
             telaForm.style.display = 'block';
             ondeEstouSpan.innerHTML = ' - Bolsa Formação - Matrícula - Cadastrar Pré-Matrícula (Formulário)';
-            console.log('[SIMULADOR] Passo 9 e 10: Formulário de pré-matrícula aberto com abas.');
+            console.log('[SIMULADOR] Passo 9 e 10: Formulário aberto.');
             step = 0;
             mostrarAba(0);
             document.getElementById('btProximo').style.display = 'inline-block';
             document.getElementById('btSalvar').style.display = 'none';
+            refreshCaptcha();
         }
 
-        // Controle de abas do formulário
         function mostrarAba(index) {
             const abasArray = ['divDadosPessoais', 'divEscolaridade', 'divPerfil', 'divConfirmacao'];
             Object.keys(conteudos).forEach(key => {
@@ -526,8 +772,6 @@
             });
             const abaAtual = abasArray[index];
             if(conteudos[abaAtual]) conteudos[abaAtual].classList.remove('abas_hidden');
-            
-            // Atualiza estilo das abas
             document.querySelectorAll('.tab-menu li').forEach((li, i) => {
                 if(i === index) li.classList.add('selected');
                 else li.classList.remove('selected');
@@ -560,9 +804,14 @@
         });
 
         document.getElementById('btSalvar').addEventListener('click', () => {
-            alert('Pré-matrícula simulada concluída com sucesso! (Apenas teste)');
-            console.log('[SIMULADOR] Fluxo completo finalizado. Salvar acionado.');
-            // Opcional: volta para a tela de pesquisa
+            const dados = {
+                cpf: document.getElementById('aluno_cpf')?.value,
+                nome: document.getElementById('aluno_nome_completo')?.value,
+                mae: document.getElementById('aluno_nome_mae')?.value,
+                data_nascimento: document.getElementById('aluno_dt_nascimento')?.value
+            };
+            alert('Pré-matrícula simulada concluída!\n' + JSON.stringify(dados, null, 2));
+            console.log('[SIMULADOR] Fluxo finalizado.', dados);
             telaForm.style.display = 'none';
             telaPesquisa.style.display = 'block';
             ondeEstouSpan.innerHTML = '';
@@ -576,11 +825,11 @@
             }
         });
 
-        // Inicialização: menu lateral e tabela ocultos
+        // Inicialização
         menuLateralTitle.style.display = 'none';
         menuContainer.style.display = 'none';
         tabelaGrid.style.display = 'none';
-        console.log('[SIMULADOR] Página de teste pronta. Siga o fluxo de 10 passos com o Playwright.');
+        console.log('[SIMULADOR] Página de teste pronta.');
     })();
 </script>
 </body>
