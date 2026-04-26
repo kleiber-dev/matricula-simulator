@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Sistec para Automação com Playwright</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #e0e0e0;
+            font-size: 12px;
+        }
+
+        /* Estilos principais para simular o ambiente Sistec */
+        #desktop {
+            background: #fff;
+            margin: 10px;
+            border: 1px solid #aaa;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        #desktopHeader {
+            background: #f0f0f0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        #desktopTitlebar {
+            padding: 8px 15px;
+            background: linear-gradient(to bottom, #fff, #e0e0e0);
+        }
+
+        .applicationTitle {
+            font-size: 24px;
+            color: #0054a6;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .tagline {
+            font-size: 11px;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        #topNav ul {
+            float: right;
+            list-style: none;
+            background: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 5px 15px;
+            margin-top: -25px;
+        }
+
+        #topNav li {
+            display: inline;
+            font-size: 11px;
+        }
+
+        #desktopNavbar {
+            background: #e9ecef;
+            padding: 5px 10px;
+            border-top: 1px solid #fff;
+            border-bottom: 1px solid #ccc;
+            position: relative;
+        }
+
+        #abas {
+            list-style: none;
+            display: flex;
+            gap: 2px;
+            margin-left: 45px;
+        }
+
+        .abaPrincipal {
+            background: #d3d7cf;
+            border: 1px solid #888;
+            border-bottom: none;
+            border-radius: 5px 5px 0 0;
+            padding: 6px 15px;
+            cursor: pointer;
+        }
+
+        .abaAtivaEsquerda {
+            background: #fff;
+            border-bottom: 1px solid #fff;
+            margin-bottom: -1px;
+            font-weight: bold;
+        }
+
+        .abaInativaEsquerda {
+            background: #e4e4e4;
+        }
+
+        .abaAtivaDireita, .abaInativaDireita {
+            text-decoration: none;
+            color: #004080;
+        }
+
+        /* Layout de colunas */
+        #pageWrapper {
+            display: flex;
+            height: 600px;
+        }
+
+        #sideColumn2 {
+            width: 260px;
+            background: #f8f8f8;
+            border-right: 1px solid #ccc;
+        }
+
+        .panel-header {
+            background: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7') repeat-x #f1f1f1;
+            padding: 6px;
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .panel-header h2 {
+            font-size: 13px;
+            color: #004080;
+        }
+
+        .panel {
+            overflow: auto;
+            height: calc(100% - 30px);
+            padding: 10px;
+        }
+
+        #mainColumn {
+            flex: 1;
+            background: #fff;
+        }
+
+        /* Formulários e tabelas */
+        .blocoMenor {
+            display: inline-block;
+            width: 120px;
+            margin: 5px 0;
+            font-weight: bold;
+        }
+
+        select, input[type="text"], input[type="button"] {
+            padding: 4px;
+            border: 1px solid #aaa;
+            border-radius: 3px;
+        }
+
+        .inputButton {
+            background: #e0e0e0;
+            cursor: pointer;
+            padding: 5px 15px;
+            font-weight: bold;
+        }
+
+        .tableGrid {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .tableGrid th, .tableGrid td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .tableGrid th {
+            background: #f0f0f0;
+            font-weight: bold;
+        }
+
+        .altRow {
+            background: #f9f9f9;
+        }
+
+        .tituloGrid {
+            font-size: 16px;
+            font-weight: bold;
+            color: #004080;
+        }
+
+        hr {
+            margin: 5px 0;
+        }
+
+        /* Abas do formulário de pré-matrícula */
+        .tab-menu {
+            list-style: none;
+            display: flex;
+            border-bottom: 2px solid #004080;
+            margin-bottom: 15px;
+        }
+        .tab-menu li {
+            padding: 8px 20px;
+            background: #e0e0e0;
+            margin-right: 5px;
+            cursor: pointer;
+            border-radius: 5px 5px 0 0;
+        }
+        .tab-menu li.selected {
+            background: #004080;
+            color: white;
+            font-weight: bold;
+        }
+        .content_abas {
+            display: block;
+        }
+        .abas_hidden {
+            display: none;
+        }
+        fieldset {
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+        }
+        legend {
+            font-weight: bold;
+            padding: 0 10px;
+        }
+        .bloco {
+            display: inline-block;
+            width: 150px;
+            margin: 5px 0;
+        }
+        #formPreMatricula {
+            max-height: 500px;
+            overflow-y: auto;
+            padding: 10px;
+        }
+        .botaoMaior {
+            padding: 8px 25px;
+            margin: 10px;
+        }
+        #btVoltar {
+            background: #6c757d;
+            color: white;
+            border: none;
+        }
+        #btProximo, #btSalvar {
+            background: #28a745;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="desktop">
+    <div id="desktopHeader">
+        <div id="desktopTitlebar">
+            <h1 class="applicationTitle">SisTec<label class="vSistec"></label></h1>
+            <h2 class="tagline">Sistema Nacional de Informações - Versão de TESTE para Automação</h2>
+            <div id="topNav">
+                <ul><li>USUÁRIO TESTE - PERFIL DEMANDANTE - INSTITUTO FEDERAL DO PARÁ</li></ul>
+            </div>
+        </div>
+        <div id="desktopNavbar">
+            <ul id="abas">
+                <li id="bolsaFormacaoIdappLi" class="abaPrincipal abaAtivaEsquerda"><a id="bolsaFormacaoIdapp" class="abaAtivaDireita" href="#">Bolsa Formação</a></li>
+                <li id="mediotecIdAppLi" class="abaPrincipal abaInativaEsquerda"><a id="mediotecIdApp" class="abaInativaDireita" href="#">Mediotec Privadas</a></li>
+                <li id="noticiasIdAppLi" class="abaPrincipal abaInativaEsquerda"><a id="noticiasIdApp" class="abaInativaDireita" href="#">Notícias</a></li>
+                <li id="pronatecIdAppLi" class="abaPrincipal abaInativaEsquerda"><a id="pronatecIdApp" class="abaInativaDireita" href="#">Pronatec</a></li>
+                <li id="pronatecVoluntarioIdAppLi" class="abaPrincipal abaInativaEsquerda"><a id="pronatecVoluntarioIdApp" class="abaInativaDireita" href="#">Pronatec Voluntário</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="pageWrapper">
+        <!-- MENU LATERAL -->
+        <div id="sideColumn2">
+            <div id="files-panel_header" class="panel-header">
+                <div id="files-panel_headerContent"><h2 id="files-panel_title" style="display: none;">Menu Bolsa Formação</h2></div>
+            </div>
+            <div id="files-panel" class="panel">
+                <div id="arvoreMenu" style="display: none;">
+                    <ul id="tree1">
+                        <li><span id="MatriculaIdApp" style="cursor: pointer; font-weight: bold;">Matrícula</span>
+                            <ul id="MatriculaIdApp_sub" style="display: none; margin-left: 20px; margin-top: 5px;">
+                                <li><a id="CadastrarPreMatriculaIdApp" href="#" style="text-decoration: none; color: #004080;">Cadastrar Pré-Matrícula</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAINEL PRINCIPAL -->
+        <div id="mainColumn">
+            <div id="mainPanel_header" class="panel-header">
+                <div id="mainPanel_headerContent">
+                    <span id="OndeEstouLabel" style="font-weight: bold;">Onde Estou</span>
+                    <span id="mainPanel_title" style="color: #098ed1;"></span>
+                </div>
+            </div>
+            <div id="mainPanel" class="panel painelPrincipal">
+                <!-- TELA DE PESQUISA E RESULTADOS (INICIAL) -->
+                <div id="telaPesquisa">
+                    <form id="formPesquisaPreMatricula">
+                        <div><label class="blocoMenor">Demandante:</label> <input type="text" value="INSTITUTO FEDERAL DO PARÁ - CAMPUS TUCURUÍ" disabled style="width: 400px;"></div>
+                        <div><label class="blocoMenor">UF *:</label> <select id="uf"><option value="">Selecione...</option><option value="PA">PA - PARÁ</option></select></div>
+                        <div><label class="blocoMenor">Município *:</label> <select id="municipio"><option value="">SELECIONE...</option></select></div>
+                        <div><label class="blocoMenor">Unidade de Ensino:</label> <select><option>SELECIONE...</option></select></div>
+                        <div style="margin-top: 15px;">
+                            <input type="button" id="botaoPesquisar" value="Pesquisar" class="inputButton">
+                            <input type="button" value="Limpar" class="inputButton">
+                        </div>
+                    </form>
+                    <div id="gridListarPreMatriculas">
+                        <hr><span class="tituloGrid">Listar Pré-Matrículas</span><hr>
+                        <table id="gridListarPreMatriculas_Grid" class="tableGrid" style="display: none;">
+                            <thead><tr><th>Unidade de Ensino</th><th>Turma</th><th>Eixo Tecnológico</th><th>Carga Horária</th><th>Modalidade</th><th>Data Início</th><th>Data Término</th><th>Vagas</th><th>Status</th><th>Ações</th></tr></thead>
+                            <tbody id="gridBody">
+                                <!-- LINHA SERÁ INSERIDA VIA JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- TELA DO FORMULÁRIO DE PRÉ-MATRÍCULA (INICIALMENTE OCULTA) -->
+                <div id="telaFormulario" style="display: none;">
+                    <form id="formPreMatricula">
+                        <div class="toolbarTabs">
+                            <ul class="tab-menu">
+                                <li id="abaPessoais" class="selected" data-aba="divDadosPessoais">Dados Pessoais</li>
+                                <li id="abaEscolaridade" data-aba="divEscolaridade">Escolaridade</li>
+                                <li id="abaPerfil" data-aba="divPerfil">Perfil</li>
+                                <li id="abaConfirmacao" data-aba="divConfirmacao">Confirmação</li>
+                            </ul>
+                        </div>
+
+                        <!-- DADOS PESSOAIS -->
+                        <div id="divDadosPessoais" class="content_abas">
+                            <fieldset><legend>Dados da Oferta</legend>
+                                <div><label class="bloco">Município:</label> <input type="text" value="GOIANÉSIA DO PARÁ" readonly></div>
+                                <div><label class="bloco">Unidade de Ensino:</label> <input type="text" value="IFPA - CAMPUS TUCURUÍ" readonly></div>
+                                <div><label class="bloco">Oferta de Turma:</label> <input type="text" value="AGENTE DE DESENVOLVIMENTO COOPERATIVISTA N1/2026" readonly></div>
+                                <div><label class="bloco">Código da Oferta:</label> <input type="text" value="4029" readonly></div>
+                            </fieldset>
+                            <fieldset><legend>Dados do Aluno</legend>
+                                <div><label class="bloco">CPF *:</label> <input type="text" id="aluno_cpf" placeholder="Digite o CPF"></div>
+                                <div><label class="bloco">Nome Completo *:</label> <input type="text" id="aluno_nome"></div>
+                                <div><label class="bloco">Data Nascimento:</label> <input type="date" id="aluno_dt_nascimento"></div>
+                                <div><label class="bloco">Nome da Mãe:</label> <input type="text" id="aluno_nome_mae"></div>
+                                <div><label class="bloco">Sexo:</label> <select id="aluno_sexo"><option>Feminino</option><option>Masculino</option></select></div>
+                            </fieldset>
+                        </div>
+                        <!-- ESCOLARIDADE -->
+                        <div id="divEscolaridade" class="content_abas abas_hidden">
+                            <fieldset><legend>Nível de Escolaridade</legend>
+                                <div><label class="bloco">Escolaridade *:</label> <select><option>Ensino Médio - Completo</option><option>Ensino Médio - Incompleto</option></select></div>
+                            </fieldset>
+                        </div>
+                        <!-- PERFIL -->
+                        <div id="divPerfil" class="content_abas abas_hidden">
+                            <fieldset><legend>Perfil do Aluno</legend>
+                                <div><label class="bloco">Possui deficiência?</label> <select><option>Não</option><option>Sim</option></select></div>
+                                <div><label class="bloco">Renda familiar?</label> <select><option>Até 1 salário mínimo</option><option>Mais de 1 salário</option></select></div>
+                            </fieldset>
+                        </div>
+                        <!-- CONFIRMAÇÃO -->
+                        <div id="divConfirmacao" class="content_abas abas_hidden">
+                            <fieldset><legend>Confirme os dados</legend>
+                                <p>Clique em "Salvar" para finalizar a pré-matrícula de teste.</p>
+                            </fieldset>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="panelInferior_header" class="panel-header">
+                <div id="panelInferior_headerContent" style="text-align: right;">
+                    <input type="button" id="btVoltar" value="Cancelar" class="botaoMaior">
+                    <input type="button" id="btProximo" value="Próximo" class="botaoMaior">
+                    <input type="button" id="btSalvar" value="Salvar" class="botaoMaior" style="display: none;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // SIMULAÇÃO COMPLETA DO FLUXO DE 10 PASSOS
+    (function() {
+        // Elementos principais
+        const abaBolsa = document.getElementById('bolsaFormacaoIdapp');
+        const menuLateralTitle = document.getElementById('files-panel_title');
+        const menuContainer = document.getElementById('arvoreMenu');
+        const matriculaLink = document.getElementById('MatriculaIdApp');
+        const subMenu = document.getElementById('MatriculaIdApp_sub');
+        const cadastrarPreMatricula = document.getElementById('CadastrarPreMatriculaIdApp');
+        const ondeEstouSpan = document.getElementById('mainPanel_title');
+        const telaPesquisa = document.getElementById('telaPesquisa');
+        const telaForm = document.getElementById('telaFormulario');
+        const selectUF = document.getElementById('uf');
+        const selectMunicipio = document.getElementById('municipio');
+        const botaoPesquisar = document.getElementById('botaoPesquisar');
+        const tabelaGrid = document.getElementById('gridListarPreMatriculas_Grid');
+        const gridBody = document.getElementById('gridBody');
+
+        // Controle de abas do formulário
+        const abas = document.querySelectorAll('.tab-menu li');
+        const conteudos = {
+            divDadosPessoais: document.getElementById('divDadosPessoais'),
+            divEscolaridade: document.getElementById('divEscolaridade'),
+            divPerfil: document.getElementById('divPerfil'),
+            divConfirmacao: document.getElementById('divConfirmacao')
+        };
+
+        let step = 0; // Controle de navegação do formulário
+
+        // 1. Clicar na aba "Bolsa Formação"
+        if(abaBolsa) {
+            abaBolsa.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Simula a geração dinâmica do menu
+                menuLateralTitle.style.display = 'block';
+                menuContainer.style.display = 'block';
+                // Atualiza aba ativa visualmente
+                document.querySelectorAll('.abaPrincipal').forEach(li => li.classList.remove('abaAtivaEsquerda'));
+                document.getElementById('bolsaFormacaoIdappLi').classList.add('abaAtivaEsquerda');
+                console.log('[SIMULADOR] Passo 1: Aba Bolsa Formação clicada. Menu exibido.');
+            });
+        }
+
+        // 2. Clicar em "Matrícula" e mostrar submenu
+        if(matriculaLink) {
+            matriculaLink.addEventListener('click', function() {
+                if(subMenu) subMenu.style.display = 'block';
+                console.log('[SIMULADOR] Passo 2: Matrícula clicado. Submenu exibido.');
+            });
+        }
+
+        // 3. Clicar em "Cadastrar Pré-Matrícula" -> Atualizar painel "Onde Estou" e mostrar formulário de pesquisa
+        if(cadastrarPreMatricula) {
+            cadastrarPreMatricula.addEventListener('click', function(e) {
+                e.preventDefault();
+                ondeEstouSpan.innerHTML = ' - Bolsa Formação - Matrícula - Cadastrar Pré-Matrícula';
+                telaPesquisa.style.display = 'block';
+                telaForm.style.display = 'none';
+                console.log('[SIMULADOR] Passo 3: Painel Onde Estou atualizado.');
+            });
+        }
+
+        // 4 e 5. Popular município baseado na UF (simulação)
+        function popularMunicipios() {
+            const ufValue = selectUF.value;
+            if(ufValue === 'PA') {
+                selectMunicipio.innerHTML = '<option value="">SELECIONE...</option><option value="1503093">GOIANÉSIA DO PARÁ</option><option value="1501402">BELÉM</option>';
+            } else {
+                selectMunicipio.innerHTML = '<option value="">SELECIONE...</option>';
+            }
+        }
+        selectUF.addEventListener('change', popularMunicipios);
+        // Inicializa vazio
+        selectMunicipio.innerHTML = '<option value="">SELECIONE...</option>';
+
+        // 6 e 7. Pesquisar e carregar a tabela
+        function carregarTabela() {
+            const ufSelecionada = selectUF.value;
+            const municipioSelecionado = selectMunicipio.value;
+            const textoMunicipio = selectMunicipio.options[selectMunicipio.selectedIndex]?.text || '';
+
+            if(ufSelecionada === 'PA' && municipioSelecionado === '1503093') {
+                // Gera a linha exatamente como no HTML original
+                const linha = `
+                    <tr class="altRow">
+                        <td><div>INSTITUTO FEDERAL DO PARÁ - CAMPUS TUCURUÍ</div></td>
+                        <td><div>AGENTE DE DESENVOLVIMENTO COOPERATIVISTA N1/2026 (4029)</div></td>
+                        <td><div>GESTÃO E NEGÓCIOS</div></td>
+                        <td><div>160</div></td>
+                        <td><div>EDUCAÇÃO PRESENCIAL</div></td>
+                        <td><div>04/05/2026</div></td>
+                        <td><div>30/06/2026</div></td>
+                        <td><div>30 (E)</div></td>
+                        <td><div><span style="color:darkGreen;">0</span> / <span style="color:Orange;">0</span> / <span style="color:red;">15</span></div></td>
+                        <td style="text-align: center;">
+                            <div style="margin:0 auto; width:82px;">
+                                <img style="width:18px; cursor:pointer;" title="Botão para cadastrar aluno." src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='green'%3E%3Cpath d='M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'/%3E%3C/svg%3E" id="btnCadastrarAlunoSimulado">
+                                <img style="width:18px;" title="Detalhar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='blue'%3E%3Cpath d='M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z'/%3E%3C/svg%3E">
+                            </div>
+                        </td>
+                    </tr>
+                `;
+                gridBody.innerHTML = linha;
+                tabelaGrid.style.display = 'table';
+
+                // Adiciona evento ao botão de cadastrar (simula passo 9)
+                const btnCadastrar = document.getElementById('btnCadastrarAlunoSimulado');
+                if(btnCadastrar) {
+                    btnCadastrar.addEventListener('click', function() {
+                        abrirFormularioPreMatricula();
+                    });
+                }
+                console.log('[SIMULADOR] Passo 7 e 8: Tabela carregada com sucesso.');
+            } else {
+                gridBody.innerHTML = '<tr><td colspan="10">Nenhum resultado encontrado. Selecione PA e GOIANÉSIA DO PARÁ.</td></tr>';
+                tabelaGrid.style.display = 'table';
+            }
+        }
+
+        botaoPesquisar.addEventListener('click', carregarTabela);
+
+        // 9 e 10. Abrir formulário de pré-matrícula (simula o painel com abas)
+        function abrirFormularioPreMatricula() {
+            telaPesquisa.style.display = 'none';
+            telaForm.style.display = 'block';
+            ondeEstouSpan.innerHTML = ' - Bolsa Formação - Matrícula - Cadastrar Pré-Matrícula (Formulário)';
+            console.log('[SIMULADOR] Passo 9 e 10: Formulário de pré-matrícula aberto com abas.');
+            step = 0;
+            mostrarAba(0);
+            document.getElementById('btProximo').style.display = 'inline-block';
+            document.getElementById('btSalvar').style.display = 'none';
+        }
+
+        // Controle de abas do formulário
+        function mostrarAba(index) {
+            const abasArray = ['divDadosPessoais', 'divEscolaridade', 'divPerfil', 'divConfirmacao'];
+            Object.keys(conteudos).forEach(key => {
+                conteudos[key].classList.add('abas_hidden');
+            });
+            const abaAtual = abasArray[index];
+            if(conteudos[abaAtual]) conteudos[abaAtual].classList.remove('abas_hidden');
+            
+            // Atualiza estilo das abas
+            document.querySelectorAll('.tab-menu li').forEach((li, i) => {
+                if(i === index) li.classList.add('selected');
+                else li.classList.remove('selected');
+            });
+        }
+
+        abas.forEach((aba, idx) => {
+            aba.addEventListener('click', () => {
+                step = idx;
+                mostrarAba(step);
+                if(step === 3) {
+                    document.getElementById('btProximo').style.display = 'none';
+                    document.getElementById('btSalvar').style.display = 'inline-block';
+                } else {
+                    document.getElementById('btProximo').style.display = 'inline-block';
+                    document.getElementById('btSalvar').style.display = 'none';
+                }
+            });
+        });
+
+        document.getElementById('btProximo').addEventListener('click', () => {
+            if(step < 3) {
+                step++;
+                mostrarAba(step);
+                if(step === 3) {
+                    document.getElementById('btProximo').style.display = 'none';
+                    document.getElementById('btSalvar').style.display = 'inline-block';
+                }
+            }
+        });
+
+        document.getElementById('btSalvar').addEventListener('click', () => {
+            alert('Pré-matrícula simulada concluída com sucesso! (Apenas teste)');
+            console.log('[SIMULADOR] Fluxo completo finalizado. Salvar acionado.');
+            // Opcional: volta para a tela de pesquisa
+            telaForm.style.display = 'none';
+            telaPesquisa.style.display = 'block';
+            ondeEstouSpan.innerHTML = '';
+        });
+
+        document.getElementById('btVoltar').addEventListener('click', () => {
+            if(confirm('Cancelar e voltar à pesquisa?')) {
+                telaForm.style.display = 'none';
+                telaPesquisa.style.display = 'block';
+                ondeEstouSpan.innerHTML = '';
+            }
+        });
+
+        // Inicialização: menu lateral e tabela ocultos
+        menuLateralTitle.style.display = 'none';
+        menuContainer.style.display = 'none';
+        tabelaGrid.style.display = 'none';
+        console.log('[SIMULADOR] Página de teste pronta. Siga o fluxo de 10 passos com o Playwright.');
+    })();
+</script>
+</body>
+</html>
