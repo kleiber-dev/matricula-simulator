@@ -287,7 +287,7 @@
             border: 1px solid #aaa;
             border-radius: 3px;
         }
-        
+
         /* Estilos para a janela flutuante (modal) */
         .modal {
             display: none;
@@ -300,7 +300,7 @@
             background-color: rgba(0,0,0,0.5);
             animation: fadeIn 0.3s ease;
         }
-        
+
         .modal-content {
             background: linear-gradient(135deg, #1a5f7a 0%, #0e3e52 100%);
             margin: 15% auto;
@@ -311,35 +311,35 @@
             animation: slideIn 0.3s ease;
             color: white;
         }
-        
+
         .modal-header {
             padding: 20px;
             text-align: center;
             border-bottom: 1px solid rgba(255,255,255,0.2);
         }
-        
+
         .modal-header h2 {
             font-size: 1.5rem;
             font-style: italic;
             margin: 0;
         }
-        
+
         .modal-body {
             padding: 30px;
             text-align: center;
         }
-        
+
         .modal-body p {
             font-size: 1.2rem;
             line-height: 1.6;
         }
-        
+
         .modal-footer {
             padding: 20px;
             text-align: center;
             border-top: 1px solid rgba(255,255,255,0.2);
         }
-        
+
         .modal-button {
             background: #ff9800;
             color: white;
@@ -350,11 +350,11 @@
             cursor: pointer;
             transition: background 0.3s;
         }
-        
+
         .modal-button:hover {
             background: #f57c00;
         }
-        
+
         .close-modal {
             float: right;
             font-size: 28px;
@@ -363,21 +363,21 @@
             color: white;
             opacity: 0.7;
         }
-        
+
         .close-modal:hover {
             opacity: 1;
         }
-        
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        
+
         @keyframes slideIn {
             from { transform: translateY(-50px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
-        
+
         .confirmacao-vazia {
             text-align: center;
             padding: 60px 20px;
@@ -392,7 +392,7 @@
             margin-bottom: 20px;
             opacity: 0.5;
         }
-        
+
         /* Estilos para os botões de ação na tabela */
         .acao-container {
             margin: 0 auto;
@@ -519,7 +519,7 @@
                             <fieldset id="fieldDadosDoAluno">
                                 <legend>Dados do Aluno</legend>
                                 <div><label class="bloco" for="aluno_cpf">CPF: <span class="obrigatorio">*</span></label><input class="campo" id="aluno_cpf" name="aluno_cpf" type="text" maxlength="14" placeholder="000.000.000-00"></div>
-                                <div><div id="aluno_captchaContent"><img id="captchaImage" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='50' viewBox='0 0 200 50'%3E%3Crect width='200' height='50' fill='%23333'/%3E%3Ctext x='20' y='35' font-family='monospace' font-size='28' fill='%23ff9800' font-weight='bold'%3ES4T3C%3C/text%3E%3C/svg%3E"><br></div><img id="aluno_captchaImg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23555' stroke-width='2'%3E%3Cpath d='M23 4v6h-6M1 20v-6h6'/%3E%3Cpath d='M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15'/%3E%3C/svg%3E" style="cursor:pointer;" onclick="refreshCaptcha()"></div>
+                                <div><div id="aluno_captchaContent"><img id="captchaImage" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='50' viewBox='0 0 200 50'%3E%3Crect width='200' height='50' fill='%23333'/%3E%3Ctext x='20' y='35' font-family='monospace' font-size='28' fill='%23ff9800' font-weight='bold'%3ES4T3C%3C/text%3E%3C/svg%3E"></div><img id="aluno_captchaImg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23555' stroke-width='2'%3E%3Cpath d='M23 4v6h-6v-6M1 20v-6h6v6'/%3E%3Cpath d='M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15'/%3E%3C/svg%3E" style="cursor:pointer;" onclick="refreshCaptcha()"></div>
                                 <div><label class="bloco" for="aluno_captcha">Preencha com o conteúdo da imagem: <span class="obrigatorio">*</span></label><input class="campo" type="text" id="aluno_captcha" name="aluno_captcha" maxlength="6" style="width:150px;"><button type="button" id="aluno_captcha_button" class="botaoPesquisa" onclick="simularBusca()">Buscar</button></div>
                                 <div><label class="bloco" for="aluno_pis">NIS/PIS:</label><input class="campo" type="text" maxlength="29" id="aluno_pis" name="aluno_pis" style="width:300px;"></div>
                                 <div><label class="bloco" for="aluno_nome_completo">Nome Completo: <span class="obrigatorio">*</span></label><input class="campo" type="text" maxlength="160" id="aluno_nome_completo" name="aluno_nome_completo" style="width:400px;"></div>
@@ -542,32 +542,24 @@
                                 <div><label class="bloco" for="aluno_bairro">Bairro: <span class="obrigatorio">*</span></label><input class="campo" type="text" maxlength="100" id="aluno_bairro" name="aluno_bairro" style="width:300px;"></div>
                                 <div><label class="bloco" for="aluno_uf">UF: <span class="obrigatorio">*</span></label><select class="campo" id="aluno_uf" name="aluno_uf" onchange="carregarMunicipiosForm()"><option value="">SELECIONE...</option><option value="AC">AC - Acre</option><option value="AL">AL - Alagoas</option><option value="AM">AM - Amazonas</option><option value="AP">AP - Amapá</option><option value="BA">BA - Bahia</option><option value="CE">CE - Ceará</option><option value="DF">DF - Distrito Federal</option><option value="ES">ES - Espírito Santo</option><option value="GO">GO - Goiás</option><option value="MA">MA - Maranhão</option><option value="MG">MG - Minas Gerais</option><option value="MS">MS - Mato Grosso do Sul</option><option value="MT">MT - Mato Grosso</option><option value="PA" selected>PA - Pará</option><option value="PB">PB - Paraíba</option><option value="PE">PE - Pernambuco</option><option value="PI">PI - Piauí</option><option value="PR">PR - Paraná</option><option value="RJ">RJ - Rio de Janeiro</option><option value="RN">RN - Rio Grande do Norte</option><option value="RO">RO - Rondônia</option><option value="RR">RR - Roraima</option><option value="RS">RS - Rio Grande do Sul</option><option value="SC">SC - Santa Catarina</option><option value="SE">SE - Sergipe</option><option value="SP">SP - São Paulo</option><option value="TO">TO - Tocantins</option></select></div>
                                 <div><label class="bloco" for="aluno_municipio">Município: <span class="obrigatorio">*</span></label><select class="campo" id="aluno_municipio" name="aluno_municipio"><option value="">SELECIONE...</option></select></div>
+                                <div><label class="bloco" for="aluno_complemento">Complemento:</label><input class="campo" type="text" maxlength="100" id="aluno_complemento" name="aluno_complemento" style="width:300px;"></div>
+                                <div><label class="bloco" for="aluno_numero">Número: <span class="obrigatorio">*</span></label><input class="campo" type="text" maxlength="10" id="aluno_numero" name="aluno_numero" style="width:100px;"></div>
                             </fieldset>
 
                             <fieldset id="fieldContato">
                                 <legend>Contato</legend>
-                                <div><label class="bloco" for="aluno_telefone">Telefone de Contato: <span class="obrigatorio">*</span></label><input class="campo" type="text" maxlength="15" id="aluno_telefone" name="aluno_telefone" placeholder="(00) 0000-0000"></div>
-                                <div><label class="bloco" for="aluno_celular">Telefone Celular:</label><input class="campo" type="text" maxlength="15" id="aluno_celular" name="aluno_celular" placeholder="(00) 00000-0000"></div>
-                                <div><label class="bloco" for="aluno_comercial">Telefone Comercial:</label><input class="campo" type="text" maxlength="15" id="aluno_comercial" name="aluno_comercial"></div>
-                                <div><label class="bloco" for="aluno_email">E-mail:</label><input class="campo" type="email" maxlength="200" id="aluno_email" name="aluno_email" placeholder="exemplo@dominio.com" style="width:300px;"></div>
+                                <div><label class="bloco" for="aluno_email">E-mail: <span class="obrigatorio">*</span></label><input class="campo" type="email" maxlength="100" id="aluno_email" name="aluno_email" style="width:300px;"></div>
+                                <div><label class="bloco" for="aluno_telefone">Telefone: <span class="obrigatorio">*</span></label><input class="campo" type="text" maxlength="15" id="aluno_telefone" name="aluno_telefone" placeholder="(00) 00000-0000" style="width:150px;"></div>
                             </fieldset>
                         </div>
 
                         <!-- ESCOLARIDADE -->
                         <div id="divEscolaridade" class="content_abas abas_hidden">
-                            <fieldset><legend>Nível de Escolaridade</legend>
-                                <div><label class="bloco" for="aluno_escolaridade">Escolaridade: <span class="obrigatorio">*</span></label>
-                                    <select class="campo" id="aluno_escolaridade" name="aluno_escolaridade" style="width: 350px;">
-                                        <option value="">SELECIONE...</option>
-                                        <option value="2">Ensino Fundamental I (1º ao 5º) - Incompleto</option>
-                                        <option value="16">Ensino Fundamental II (6º ao 9º) - Incompleto</option>
-                                        <option value="8">Ensino Fundamental II (6º ao 9º) - Completo</option>
-                                        <option value="4">Ensino Médio - Incompleto</option>
-                                        <option value="5">Ensino Médio - Completo</option>
-                                        <option value="13">Ensino Superior - Incompleto</option>
-                                        <option value="12">Ensino Superior - Completo</option>
-                                    </select>
-                                </div>
+                            <fieldset>
+                                <legend>Escolaridade</legend>
+                                <div><label class="bloco" for="aluno_escolaridade">Escolaridade: <span class="obrigatorio">*</span></label><select class="campo" id="aluno_escolaridade" name="aluno_escolaridade"><option value="">Selecione...</option><option value="1">Ensino Fundamental Incompleto</option><option value="2">Ensino Fundamental Completo</option><option value="3">Ensino Médio Incompleto</option><option value="4">Ensino Médio Completo</option><option value="5">Ensino Superior Incompleto</option><option value="6">Ensino Superior Completo</option></select></div>
+                                <div><label class="bloco" for="aluno_ano_conclusao">Ano de Conclusão:</label><input class="campo" type="text" maxlength="4" id="aluno_ano_conclusao" name="aluno_ano_conclusao"></div>
+                                <div><label class="bloco" for="aluno_instituicao_ensino">Instituição de Ensino:</label><input class="campo" type="text" maxlength="100" id="aluno_instituicao_ensino" name="aluno_instituicao_ensino" style="width:400px;"></div>
                             </fieldset>
                         </div>
 
@@ -575,57 +567,79 @@
                         <div id="divPerfil" class="content_abas abas_hidden">
                             <fieldset id="fieldPne">
                                 <legend>Pessoa com Deficiência</legend>
-                                <div><label class="bloco">Possui deficiência? <span class="obrigatorio">*</span></label>
-                                    <span id="spanPne"><label for="aluno_pne_S"><input class="radio campo" type="radio" value="S" id="aluno_pne_S" name="aluno_pne"> Sim</label><label for="aluno_pne_N"><input class="radio campo" type="radio" value="N" id="aluno_pne_N" name="aluno_pne" checked=""> Não</label></span>
+                                <div><label class="bloco">É pessoa com deficiência? <span class="obrigatorio">*</span></label>
+                                    <span id="spanPne"><label for="aluno_pne_S"><input class="radio campo" type="radio" value="1" id="aluno_pne_S" name="aluno_pne"> Sim</label><label for="aluno_pne_N"><input class="radio campo" type="radio" value="0" id="aluno_pne_N" name="aluno_pne" checked=""> Não</label></span>
                                 </div>
                                 <div id="id_pneTipos" style="display: none;">
-                                    <div><label for="aluno_pne_tipos_6"><input type="checkbox" value="6" id="aluno_pne_tipos_6" name="aluno_pne_tipos[]"> Deficiência Intelectual</label></div>
-                                    <div><label for="aluno_pne_tipos_7"><input type="checkbox" value="7" id="aluno_pne_tipos_7" name="aluno_pne_tipos[]"> Deficiência Física</label></div>
-                                    <div><label for="aluno_pne_tipos_2"><input type="checkbox" value="2" id="aluno_pne_tipos_2" name="aluno_pne_tipos[]"> Deficiência Auditiva</label></div>
-                                    <div><label for="aluno_pne_tipos_5"><input type="checkbox" value="5" id="aluno_pne_tipos_5" name="aluno_pne_tipos[]"> Surdez</label></div>
-                                    <div><label for="aluno_pne_tipos_1"><input type="checkbox" value="1" id="aluno_pne_tipos_1" name="aluno_pne_tipos[]"> Baixa Visão</label></div>
-                                    <div><label for="aluno_pne_tipos_8"><input type="checkbox" value="8" id="aluno_pne_tipos_8" name="aluno_pne_tipos[]"> Cegueira</label></div>
-                                    <div><label for="aluno_pne_tipos_9"><input type="checkbox" value="9" id="aluno_pne_tipos_9" name="aluno_pne_tipos[]"> Surdocegueira</label></div>
-                                    <div><label for="aluno_pne_tipos_10"><input type="checkbox" value="10" id="aluno_pne_tipos_10" name="aluno_pne_tipos[]"> Outro</label><span id="spanPneMultiplas">Quais? <input class="campo" type="text" name="aluno_pne_tipos_outro" id="aluno_pne_tipos_outro" value=""></span></div>
+                                    <div><label class="bloco">Tipo de Deficiência: <span class="obrigatorio">*</span></label></div>
+                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_pne_cegueira" name="aluno_pne_cegueira"> Cegueira</label></div>
+                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_pne_baixa_visao" name="aluno_pne_baixa_visao"> Baixa Visão</label></div>
+                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_pne_surdez" name="aluno_pne_surdez"> Surdez</label></div>
+                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_pne_auditiva" name="aluno_pne_auditiva"> Deficiência Auditiva</label></div>
+                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_pne_fisica" name="aluno_pne_fisica"> Deficiência Física</label></div>
+                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_pne_intelectual" name="aluno_pne_intelectual"> Deficiência Intelectual</label></div>
+                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_pne_multipla" name="aluno_pne_multipla"> Deficiência Múltipla</label></div>
+                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_pne_autismo" name="aluno_pne_autismo"> Transtorno do Espectro Autista</label></div>
+                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_pne_sindrome_down" name="aluno_pne_sindrome_down"> Síndrome de Down</label></div>
+                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_pne_superdotacao" name="aluno_pne_superdotacao"> Superdotação</label></div>
+                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_pne_outro" name="aluno_pne_outro"> Outro</label></div>
+                                    <div class="checkboxAway" id="divPneOutroTexto" style="display: none;"><label class="bloco" for="aluno_pne_tipos_outro">Qual? <span class="obrigatorio">*</span></label><input class="campo" type="text" id="aluno_pne_tipos_outro" name="aluno_pne_tipos_outro" style="width:300px;"></div>
                                 </div>
                             </fieldset>
 
-                            <fieldset id="fieldPerfil">
-                                <legend>Perfil</legend>
-                                <div><label class="bloco">O Aluno ou sua família recebe auxílio financeiro por meio de algum programa de transferência de renda? <span class="obrigatorio">*</span></label>
-                                    <span id="spanBolsaRenda"><label for="aluno_auxilio_financeiro_transferencia_renda_S"><input class="radio campo" type="radio" value="S" id="aluno_auxilio_financeiro_transferencia_renda_S" name="aluno_auxilio_financeiro_transferencia_renda"> Sim</label><label for="aluno_auxilio_financeiro_transferencia_renda_N"><input class="radio campo" type="radio" value="N" id="aluno_auxilio_financeiro_transferencia_renda_N" name="aluno_auxilio_financeiro_transferencia_renda" checked=""> Não</label></span>
+                            <fieldset id="fieldAuxilioFinanceiro">
+                                <legend>Auxílio Financeiro</legend>
+                                <div><label class="bloco">Recebe auxílio financeiro de programas de transferência de renda? <span class="obrigatorio">*</span></label>
+                                    <span id="spanAuxilio"><label for="aluno_auxilio_financeiro_transferencia_renda_S"><input class="radio campo" type="radio" value="1" id="aluno_auxilio_financeiro_transferencia_renda_S" name="aluno_auxilio_financeiro_transferencia_renda"> Sim</label><label for="aluno_auxilio_financeiro_transferencia_renda_N"><input class="radio campo" type="radio" value="0" id="aluno_auxilio_financeiro_transferencia_renda_N" name="aluno_auxilio_financeiro_transferencia_renda" checked=""> Não</label></span>
                                 </div>
                                 <div id="divBolsaRenda" style="display: none;">
-                                    <div class="checkboxAway"><label for="aluno_auxilio_bolsa_familia"><input type="checkbox" value="10" id="aluno_auxilio_bolsa_familia" name="auxilioTipo[]"> Bolsa Família</label></div>
-                                    <div id="divDsAuxilioBolsaFamilia"><label class="bloco" for="aluno_auxilio_pis_bolsa_familia">NIS/PIS: <span class="obrigatorio">*</span></label><input class="campo" type="text" maxlength="29" id="aluno_auxilio_pis_bolsa_familia" name="aluno_auxilio_pis_bolsa_familia" value=""></div>
-                                    <div class="checkboxAway"><label for="aluno_auxilio_bpc"><input type="checkbox" value="8" id="aluno_auxilio_bpc" name="auxilioTipo[]"> Benefício de Prestação Continuada - BPC</label></div>
-                                    <div><label class="bloco" for="aluno_auxilio_outro"><input type="checkbox" value="11" id="aluno_auxilio_outro" name="auxilioTipo[]"> Outro:</label><input class="campo" type="text" id="aluno_auxilio_outro_texto" name="aluno_auxilio_outro_texto" value="" style="display: none;"></div>
-                                </div>
-                                <div><label class="bloco">Pertence a população do Campo? <span class="obrigatorio">*</span></label>
-                                    <span id="spanPopulacaoCampo"><label for="aluno_populacao_campo_S"><input class="radio campo" type="radio" value="S" id="aluno_populacao_campo_S" name="aluno_populacao_campo"> Sim</label><label for="aluno_populacao_campo_N"><input class="radio campo" type="radio" value="N" id="aluno_populacao_campo_N" name="aluno_populacao_campo" checked=""> Não</label></span>
-                                </div>
-                                <div id="divPopulacaoCampo" class="checkboxAway" style="display: none;">
-                                    <div><label for="aluno_populacao_campo_tipo_13"><input type="checkbox" value="13" id="aluno_populacao_campo_tipo_13" name="pronaCampoSituacoes[]"> Trabalhador Extrativista</label></div>
-                                    <div><label for="aluno_populacao_campo_tipo_15"><input type="checkbox" value="15" id="aluno_populacao_campo_tipo_15" name="pronaCampoSituacoes[]"> Trabalhador Silvicultor</label></div>
-                                    <div><label for="aluno_populacao_campo_tipo_16"><input type="checkbox" value="16" id="aluno_populacao_campo_tipo_16" name="pronaCampoSituacoes[]"> Trabalhador Pescador</label></div>
-                                    <div><label for="aluno_populacao_campo_tipo_14"><input type="checkbox" value="14" id="aluno_populacao_campo_tipo_14" name="pronaCampoSituacoes[]"> Trabalhador Aquicultor</label></div>
-                                    <div><label for="aluno_populacao_campo_tipo_12"><input type="checkbox" value="12" id="aluno_populacao_campo_tipo_12" name="pronaCampoSituacoes[]"> Trabalhador Agricultor Familiar</label></div>
-                                </div>
-                                <div><label class="bloco">Está desempregado? <span class="obrigatorio">*</span></label>
-                                    <span id="spanDesempregado"><label for="aluno_desempregado_S"><input class="radio campo" type="radio" value="1" id="aluno_desempregado_S" name="aluno_desempregado"> Sim</label><label for="aluno_desempregado_N"><input class="radio campo" type="radio" value="0" id="aluno_desempregado_N" name="aluno_desempregado" checked=""> Não</label></span>
-                                </div>
-                                <div id="divSeguroDesemprego" style="display: none;">
-                                    <label class="bloco">Está Recebendo Seguro Desemprego? <span class="obrigatorio">*</span></label>
-                                    <span id="spanDesempregado2"><label for="aluno_seguro_desemprego_S"><input class="radio campo" type="radio" value="1" id="aluno_seguro_desemprego_S" name="aluno_seguro_desemprego"> Sim</label><label for="aluno_seguro_desemprego_N"><input class="radio campo" type="radio" value="0" id="aluno_seguro_desemprego_N" name="aluno_seguro_desemprego" checked=""> Não</label></span>
+                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_auxilio_bolsa_familia" name="aluno_auxilio_bolsa_familia"> Bolsa Família</label></div>
+                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_auxilio_bpc" name="aluno_auxilio_bpc"> BPC (Benefício de Prestação Continuada)</label></div>
+                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_auxilio_outro" name="aluno_auxilio_outro"> Outro</label></div>
+                                    <div class="checkboxAway" id="divAuxilioOutroTexto" style="display: none;"><label class="bloco" for="aluno_auxilio_outro_texto">Qual? <span class="obrigatorio">*</span></label><input class="campo" type="text" id="aluno_auxilio_outro_texto" name="aluno_auxilio_outro_texto" style="width:300px;"></div>
                                 </div>
                             </fieldset>
 
-                            <fieldset id="fieldEtnia">
-                                <legend>Declaração de Etnia</legend>
+                            <fieldset id="fieldPopulacaoCampo">
+                                <legend>População do Campo</legend>
+                                <div><label class="bloco">Pertence à população do campo? <span class="obrigatorio">*</span></label>
+                                    <span id="spanPopulacaoCampo"><label for="aluno_populacao_campo_S"><input class="radio campo" type="radio" value="1" id="aluno_populacao_campo_S" name="aluno_populacao_campo"> Sim</label><label for="aluno_populacao_campo_N"><input class="radio campo" type="radio" value="0" id="aluno_populacao_campo_N" name="aluno_populacao_campo" checked=""> Não</label></span>
+                                </div>
+                                <div id="divPopulacaoCampo" style="display: none;">
+                                    <div><label class="bloco">Atividade: <span class="obrigatorio">*</span></label></div>
+                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_populacao_campo_agricultor" name="aluno_populacao_campo_agricultor"> Agricultor Familiar</label></div>
+                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_populacao_campo_assentado" name="aluno_populacao_campo_assentado"> Assentado da Reforma Agrária</label></div>
+                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_populacao_campo_pescador" name="aluno_populacao_campo_pescador"> Pescador Artesanal</label></div>
+                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_populacao_campo_extrativista" name="aluno_populacao_campo_extrativista"> Extrativista</label></div>
+                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_populacao_campo_ribeirinho" name="aluno_populacao_campo_ribeirinho"> Ribeirinho</label></div>
+                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_populacao_campo_quilombola" name="aluno_populacao_campo_quilombola"> Quilombola</label></div>
+                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_populacao_campo_indigena" name="aluno_populacao_campo_indigena"> Indígena</label></div>
+                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_populacao_campo_outros" name="aluno_populacao_campo_outros"> Outros</label></div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset id="fieldDesemprego">
+                                <legend>Desemprego</legend>
+                                <div><label class="bloco">Está desempregado? <span class="obrigatorio">*</span></label>
+                                    <span id="spanDesemprego"><label for="aluno_desempregado_S"><input class="radio campo" type="radio" value="1" id="aluno_desempregado_S" name="aluno_desempregado"> Sim</label><label for="aluno_desempregado_N"><input class="radio campo" type="radio" value="0" id="aluno_desempregado_N" name="aluno_desempregado" checked=""> Não</label></span>
+                                </div>
+                                <div id="divSeguroDesemprego" style="display: none;">
+                                    <div><label class="bloco">Recebe Seguro Desemprego? <span class="obrigatorio">*</span></label>
+                                        <span id="spanSeguroDesemprego"><label for="aluno_seguro_desemprego_S"><input class="radio campo" type="radio" value="1" id="aluno_seguro_desemprego_S" name="aluno_seguro_desemprego"> Sim</label><label for="aluno_seguro_desemprego_N"><input class="radio campo" type="radio" value="0" id="aluno_seguro_desemprego_N" name="aluno_seguro_desemprego" checked=""> Não</label></span>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset id="fieldPovoIndigena">
+                                <legend>Povo Indígena</legend>
                                 <div><label class="bloco">É membro de povo indígena? <span class="obrigatorio">*</span></label>
                                     <span id="spanIndigena"><label for="aluno_povo_indigena_S"><input class="radio campo" type="radio" value="1" id="aluno_povo_indigena_S" name="aluno_povo_indigena"> Sim</label><label for="aluno_povo_indigena_N"><input class="radio campo" type="radio" value="0" id="aluno_povo_indigena_N" name="aluno_povo_indigena" checked=""> Não</label></span>
                                 </div>
                                 <div id="divPovoIndigenaEspecificacao" style="display: none;"><label class="bloco" for="aluno_povo_indigena_texto">Escreva o nome do povo indígena conforme a FUNAI <span class="obrigatorio">*</span></label><input class="campo" type="text" id="aluno_povo_indigena_texto" name="aluno_povo_indigena_texto" value=""></div>
+                            </fieldset>
+
+                            <fieldset id="fieldComunidadeQuilombola">
+                                <legend>Comunidade Quilombola</legend>
                                 <div><label class="bloco">É membro de comunidade Quilombola? <span class="obrigatorio">*</span></label>
                                     <span id="spanQuilombola"><label for="aluno_comunidade_quilombola_S"><input class="radio campo" type="radio" value="1" id="aluno_comunidade_quilombola_S" name="aluno_comunidade_quilombola"> Sim</label><label for="aluno_comunidade_quilombola_N"><input class="radio campo" type="radio" value="0" id="aluno_comunidade_quilombola_N" name="aluno_comunidade_quilombola" checked=""> Não</label></span>
                                 </div>
@@ -654,7 +668,7 @@
                     </form>
                 </div>
             </div>
-            
+
             <!-- BARRA DE NAVEGAÇÃO -->
             <div id="panelInferior_header" class="panel-header">
                 <div id="panelInferior_headerContent" style="display: flex; justify-content: space-between; align-items: center;">
@@ -756,16 +770,16 @@
                         };
                         document.body.appendChild(btnBaixar);
                     };
-                <\/script>
+                </script>
             </body>
             </html>
         `;
-        
+
         const novaAba = window.open();
         novaAba.document.write(conteudoPDF);
         novaAba.document.close();
     }
-    
+
     // Script principal do simulador
     (function() {
         const abaBolsa = document.getElementById('bolsaFormacaoIdapp');
@@ -848,7 +862,7 @@
             const resSim = document.getElementById('aluno_soldado_cidadao_S');
             const resNao = document.getElementById('aluno_soldado_cidadao_N');
             const divRes = document.getElementById('divReservista');
-            if(resSim && resNao) { resSim.addEventListener('change', () => { if(resSim.checked) divRes.style.display = 'block'; }); resNao.addEventListener('change', () => { if(resNao.checked) divRes.style.display = 'none'; }); divRes.style.display = 'none'; }
+            if(resSim && resNao) { resSim.addEventListener('change', () => { if(resSim.checked) divRes.style.display = 'block'; }); resNao.addEventListener('change', () => { if(resNao.checked) divRes.style.display = 'none'; }); divRes.style.display = 'none'; });
         }
 
         const radioSim = document.getElementById('isCadastrarNomeSocial');
@@ -864,7 +878,7 @@
             const captchaInput = document.getElementById('aluno_captcha');
             if(captchaInput) captchaInput.dataset.captchaReal = randomCode;
         };
-        
+
         window.simularBusca = function() {
             const captchaDigitado = document.getElementById('aluno_captcha').value;
             const captchaReal = document.getElementById('aluno_captcha').dataset.captchaReal || 'S4T3C';
@@ -873,15 +887,15 @@
                 document.getElementById('aluno_nome_completo').value = 'ALUNO TESTE AUTOMATIZADO';
                 document.getElementById('aluno_nome_mae').value = 'MARIA DA SILVA TESTE';
                 document.getElementById('aluno_dt_nascimento').value = '1990-01-01';
-        
-                // &gt;&gt;&gt; Ajuste para compatibilidade com a automação Python &lt;&lt;&lt;
+
+                // >>> Ajuste para compatibilidade com a automação Python <<<
                 // Garante que o select #aluno_municipio (do endereço) tenha um valor não vazio
                 const alunoMunicipioSelect = document.getElementById('aluno_municipio'); // Este é o select do endereço
                 if (alunoMunicipioSelect) {
                     // Adiciona uma opção "SIMULADO" se não houver opções ou se a primeira for vazia
                     // (para garantir que sempre haja algo para selecionar)
                     let foundGoianesia = false;
-                    for (let i = 0; i &lt; alunoMunicipioSelect.options.length; i++) {
+                    for (let i = 0; i < alunoMunicipioSelect.options.length; i++) {
                         if (alunoMunicipioSelect.options[i].value === "1503093") {
                             foundGoianesia = true;
                             break;
@@ -896,12 +910,12 @@
                     // Seleciona a opção de Goianésia do Pará
                     alunoMunicipioSelect.value = "1503093";
                 }
-        
+
             } else { 
                 alert('❌ Captcha inválido. Código correto: ' + captchaReal); 
             }
         };
-        
+
         window.carregarMunicipiosForm = function() {
             const uf = document.getElementById('aluno_uf').value;
             const municipioSelect = document.getElementById('aluno_municipio');
@@ -915,9 +929,20 @@
         if(matriculaLink) { matriculaLink.addEventListener('click', function() { if(subMenu) subMenu.style.display = 'block'; }); }
         if(cadastrarPreMatricula) { cadastrarPreMatricula.addEventListener('click', function(e) { e.preventDefault(); ondeEstouSpan.innerHTML = ' - Bolsa Formação - Matrícula - Cadastrar Pré-Matrícula'; telaPesquisa.style.display = 'block'; telaForm.style.display = 'none'; }); }
 
-        function popularMunicipios() { const ufValue = selectUF.value; if(ufValue === 'PA') selectMunicipio.innerHTML = '<option value="">SELECIONE...</option><option value="1503093">GOIANÉSIA DO PARÁ</option><option value="1501402">BELÉM</option>'; else selectMunicipio.innerHTML = '<option value="">SELECIONE...</option>'; }
+        // Mova a função popularMunicipios para cá, dentro do bloco (function() { ... })();
+        function popularMunicipios() {
+            const ufValue = selectUF.value;
+            if(ufValue === 'PA') {
+                selectMunicipio.innerHTML = '<option value="">SELECIONE...</option><option value="1503093">GOIANÉSIA DO PARÁ</option><option value="1501402">BELÉM</option>';
+            } else {
+                selectMunicipio.innerHTML = '<option value="">SELECIONE...</option>';
+            }
+        }
+
+        // Mova estas chamadas para cá, dentro do bloco (function() { ... })();
         selectUF.addEventListener('change', popularMunicipios);
-        selectMunicipio.innerHTML = '<option value="">SELECIONE...</option>';
+        // selectMunicipio.innerHTML = '<option value="">SELECIONE...</option>'; // Esta linha pode ser removida se popularMunicipios() já for chamada no init
+        popularMunicipios(); // Adicione esta linha para popular o município inicial se a UF já estiver selecionada
 
         // Função para carregar a tabela com a estrutura correta do Sistec
         function carregarTabela() {
