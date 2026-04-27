@@ -873,7 +873,27 @@
                 document.getElementById('aluno_nome_completo').value = 'ALUNO TESTE AUTOMATIZADO';
                 document.getElementById('aluno_nome_mae').value = 'MARIA DA SILVA TESTE';
                 document.getElementById('aluno_dt_nascimento').value = '1990-01-01';
-            } else { alert('❌ Captcha inválido. Código correto: ' + captchaReal); }
+
+                // >>> Ajuste para compatibilidade com a automação Python <<<
+                const municipioEnd = document.getElementById('aluno_municipio');
+                if (municipioEnd && municipioEnd.value === "") {
+                    if (municipioEnd.options.length === 0) {
+                        const opt = document.createElement('option');
+                        opt.value = "SIMULADO";
+                        opt.textContent = "SIMULADO";
+                        municipioEnd.appendChild(opt);
+                    }
+                    const primeiraOpcaoNaoVazia = Array.from(municipioEnd.options)
+                        .find(o => o.value !== "");
+                    if ( primeiraOpcaoNaoVazia ) {
+                        municipioEnd.value = primeiraOpcaoNaoVazia.value;
+                    } else {
+                        municipioEnd.value = "SIMULADO";
+                    }
+                }
+            } else { 
+                alert('❌ Captcha inválido. Código correto: ' + captchaReal); 
+            }
         };
         
         window.carregarMunicipiosForm = function() {
