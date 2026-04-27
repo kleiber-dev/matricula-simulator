@@ -873,24 +873,30 @@
                 document.getElementById('aluno_nome_completo').value = 'ALUNO TESTE AUTOMATIZADO';
                 document.getElementById('aluno_nome_mae').value = 'MARIA DA SILVA TESTE';
                 document.getElementById('aluno_dt_nascimento').value = '1990-01-01';
-
-                // >>> Ajuste para compatibilidade com a automação Python <<<
-                const municipioEnd = document.getElementById('aluno_municipio');
-                if (municipioEnd && municipioEnd.value === "") {
-                    if (municipioEnd.options.length === 0) {
+        
+                // &gt;&gt;&gt; Ajuste para compatibilidade com a automação Python &lt;&lt;&lt;
+                // Garante que o select #aluno_municipio (do endereço) tenha um valor não vazio
+                const alunoMunicipioSelect = document.getElementById('aluno_municipio'); // Este é o select do endereço
+                if (alunoMunicipioSelect) {
+                    // Adiciona uma opção "SIMULADO" se não houver opções ou se a primeira for vazia
+                    // (para garantir que sempre haja algo para selecionar)
+                    let foundGoianesia = false;
+                    for (let i = 0; i &lt; alunoMunicipioSelect.options.length; i++) {
+                        if (alunoMunicipioSelect.options[i].value === "1503093") {
+                            foundGoianesia = true;
+                            break;
+                        }
+                    }
+                    if (!foundGoianesia) {
                         const opt = document.createElement('option');
-                        opt.value = "SIMULADO";
-                        opt.textContent = "SIMULADO";
-                        municipioEnd.appendChild(opt);
+                        opt.value = "1503093"; // Valor de Goianésia do Pará
+                        opt.textContent = "GOIANÉSIA DO PARÁ (Simulado)";
+                        alunoMunicipioSelect.appendChild(opt);
                     }
-                    const primeiraOpcaoNaoVazia = Array.from(municipioEnd.options)
-                        .find(o => o.value !== "");
-                    if ( primeiraOpcaoNaoVazia ) {
-                        municipioEnd.value = primeiraOpcaoNaoVazia.value;
-                    } else {
-                        municipioEnd.value = "SIMULADO";
-                    }
+                    // Seleciona a opção de Goianésia do Pará
+                    alunoMunicipioSelect.value = "1503093";
                 }
+        
             } else { 
                 alert('❌ Captcha inválido. Código correto: ' + captchaReal); 
             }
