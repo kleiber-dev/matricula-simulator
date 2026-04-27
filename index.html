@@ -1314,20 +1314,108 @@
 
             btSalvar.addEventListener('click', () => { abrirModal(); });
 
+            // btNovaPreMatricula.addEventListener('click', () => {
+            //     step = 0;
+            //     mostrarAba(0);
+            //     atualizarBotoesNavegacao();
+            //     if (confirm('Deseja limpar todos os campos do formulário?')) {
+            //         document.querySelectorAll('#formPreMatricula input, #formPreMatricula select').forEach(el => {
+            //             if (el.type !== 'radio' && el.type !== 'checkbox' && el.type !== 'file') el.value = '';
+            //         });
+            //         document.querySelectorAll('#formPreMatricula input[type="radio"], #formPreMatricula input[type="checkbox"]').forEach(el => el.checked = false);
+            //         document.getElementById('notCadastrarNomeSocial').checked = true;
+            //         document.getElementById('box_nome_social').style.display = 'none';
+            //     }
+            // });
+
             btNovaPreMatricula.addEventListener('click', () => {
                 step = 0;
                 mostrarAba(0);
                 atualizarBotoesNavegacao();
-                if (confirm('Deseja limpar todos os campos do formulário?')) {
-                    document.querySelectorAll('#formPreMatricula input, #formPreMatricula select').forEach(el => {
-                        if (el.type !== 'radio' && el.type !== 'checkbox' && el.type !== 'file') el.value = '';
-                    });
-                    document.querySelectorAll('#formPreMatricula input[type="radio"], #formPreMatricula input[type="checkbox"]').forEach(el => el.checked = false);
-                    document.getElementById('notCadastrarNomeSocial').checked = true;
-                    document.getElementById('box_nome_social').style.display = 'none';
-                }
-            });
 
+                // Removemos o 'confirm' para que a limpeza seja automática para a automação
+                document.querySelectorAll('#formPreMatricula input, #formPreMatricula select').forEach(el => {
+                    if (el.type !== 'radio' && el.type !== 'checkbox' && el.type !== 'file') {
+                        el.value = '';
+                    }
+                });
+                // Limpa radios e checkboxes
+                document.querySelectorAll('#formPreMatricula input[type="radio"], #formPreMatricula input[type="checkbox"]').forEach(el => {
+                    // Para radios, desmarca todos, e depois marca o default 'Nao' se existir
+                    if (el.type === 'radio') {
+                        el.checked = false;
+                    } else { // Checkboxes
+                        el.checked = false;
+                    }
+                });
+
+                // Define defaults para radios específicos se necessário (ex: Nome Social 'Não')
+                const notCadastrarNomeSocial = document.getElementById('notCadastrarNomeSocial');
+                if (notCadastrarNomeSocial) {
+                    notCadastrarNomeSocial.checked = true;
+                }
+                const boxNomeSocial = document.getElementById('box_nome_social');
+                if (boxNomeSocial) {
+                    boxNomeSocial.style.display = 'none';
+                }
+
+                // Adicionalmente, para os selects que não são limpos por el.value = ''
+                // e que precisam de uma opção default, podemos resetá-los
+                const alunoUf = document.getElementById('aluno_uf');
+                if (alunoUf) alunoUf.value = ''; // Reseta para "SELECIONE..."
+
+                const alunoMunicipio = document.getElementById('aluno_municipio');
+                if (alunoMunicipio) {
+                    alunoMunicipio.innerHTML = '<option value="">SELECIONE...</option>'; // Limpa e adiciona a opção default
+                    alunoMunicipio.value = '';
+                }
+
+                // Resetar os radios de "Pessoa com Deficiência" para "Não" e esconder o bloco
+                const pneNao = document.getElementById('aluno_pne_N');
+                if (pneNao) pneNao.checked = true;
+                const pneTipos = document.getElementById('id_pneTipos');
+                if (pneTipos) pneTipos.style.display = 'none';
+
+                // Resetar os radios de "Auxílio Financeiro" para "Não" e esconder o bloco
+                const auxilioNao = document.getElementById('aluno_auxilio_financeiro_transferencia_renda_N');
+                if (auxilioNao) auxilioNao.checked = true;
+                const divBolsaRenda = document.getElementById('divBolsaRenda');
+                if (divBolsaRenda) divBolsaRenda.style.display = 'none';
+
+                // Resetar os radios de "População do Campo" para "Não" e esconder o bloco
+                const campNao = document.getElementById('aluno_populacao_campo_N');
+                if (campNao) campNao.checked = true;
+                const divCampo = document.getElementById('divPopulacaoCampo');
+                if (divCampo) divCampo.style.display = 'none';
+
+                // Resetar os radios de "Desempregado" para "Não" e esconder o bloco
+                const desempNao = document.getElementById('aluno_desempregado_N');
+                if (desempNao) desempNao.checked = true;
+                const divSeguro = document.getElementById('divSeguroDesemprego');
+                if (divSeguro) divSeguro.style.display = 'none';
+
+                // Resetar os radios de "Povo Indígena" para "Não" e esconder o bloco
+                const indNao = document.getElementById('aluno_povo_indigena_N');
+                if (indNao) indNao.checked = true;
+                const divInd = document.getElementById('divPovoIndigenaEspecificacao');
+                if (divInd) divInd.style.display = 'none';
+
+                // Resetar os radios de "Comunidade Quilombola" para "Não" e esconder o bloco
+                const quiNao = document.getElementById('aluno_comunidade_quilombola_N');
+                if (quiNao) quiNao.checked = true;
+                const divQui = document.getElementById('divComunidadeQuilombolaEspecificacao');
+                if (divQui) divQui.style.display = 'none';
+
+                // Resetar os radios de "Reservista" para "Não" e esconder o bloco
+                const resNao = document.getElementById('aluno_soldado_cidadao_N');
+                if (resNao) resNao.checked = true;
+                const divRes = document.getElementById('divReservista');
+                if (divRes) divRes.style.display = 'none';
+
+                // Chamar initPerfilInteractions para redefinir os listeners e estados iniciais dos blocos condicionais
+                // Isso é importante para que os blocos condicionais (ex: deficiência, quilombola) voltem ao estado inicial "escondido"
+                initPerfilInteractions();
+            });
             btVoltar.addEventListener('click', () => {
                 if (confirm('Cancelar e voltar à tela de pesquisa?')) {
                     telaForm.style.display = 'none';
