@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +22,7 @@
             background: #fff;
             margin: 10px;
             border: 1px solid #aaa;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
 
         #desktopHeader {
@@ -97,7 +98,8 @@
             background: #e4e4e4;
         }
 
-        .abaAtivaDireita, .abaInativaDireita {
+        .abaAtivaDireita,
+        .abaInativaDireita {
             text-decoration: none;
             color: #004080;
         }
@@ -143,7 +145,12 @@
             font-weight: bold;
         }
 
-        select, input[type="text"], input[type="button"], input[type="date"], input[type="email"], input[type="file"] {
+        select,
+        input[type="text"],
+        input[type="button"],
+        input[type="date"],
+        input[type="email"],
+        input[type="file"] {
             padding: 4px;
             border: 1px solid #aaa;
             border-radius: 3px;
@@ -162,7 +169,8 @@
             margin-top: 15px;
         }
 
-        .tableGrid th, .tableGrid td {
+        .tableGrid th,
+        .tableGrid td {
             border: 1px solid #ccc;
             padding: 8px;
             text-align: center;
@@ -194,6 +202,7 @@
             border-bottom: 2px solid #004080;
             margin-bottom: 15px;
         }
+
         .tab-menu li {
             padding: 8px 20px;
             background: #e0e0e0;
@@ -201,77 +210,94 @@
             cursor: pointer;
             border-radius: 5px 5px 0 0;
         }
+
         .tab-menu li.selected {
             background: #004080;
             color: white;
             font-weight: bold;
         }
+
         .content_abas {
             display: block;
         }
+
         .abas_hidden {
             display: none;
         }
+
         fieldset {
             padding: 15px;
             margin-bottom: 15px;
             border: 1px solid #ccc;
             border-radius: 8px;
         }
+
         legend {
             font-weight: bold;
             padding: 0 10px;
             color: #004080;
         }
+
         .bloco {
             display: inline-block;
             width: 220px;
             margin: 8px 0;
             font-weight: bold;
         }
+
         .checkboxAway {
             margin: 8px 0;
         }
+
         #formPreMatricula {
             max-height: 500px;
             overflow-y: auto;
             padding: 10px;
         }
+
         .botaoMaior {
             padding: 8px 25px;
             margin: 10px;
             cursor: pointer;
         }
+
         #btVoltar {
             background: #6c757d;
             color: white;
             border: none;
         }
-        #btProximo, #btSalvar {
+
+        #btProximo,
+        #btSalvar {
             background: #28a745;
             color: white;
             border: none;
         }
+
         .radio-grupo {
             display: flex;
             gap: 20px;
             margin-top: 5px;
         }
+
         .radio-label {
             display: flex;
             align-items: center;
             gap: 5px;
             font-weight: normal;
         }
+
         .arquivo_tip {
             display: block;
             font-size: 10px;
             color: #666;
             margin-top: 5px;
         }
+
         .obrigatorio {
             color: #d32f2f;
         }
+
         .botaoPesquisa {
             background: #ff9800;
             color: white;
@@ -279,9 +305,11 @@
             padding: 4px 12px;
             cursor: pointer;
         }
+
         .botaoPesquisa:hover {
             background: #f57c00;
         }
+
         .campo {
             padding: 4px;
             border: 1px solid #aaa;
@@ -297,7 +325,7 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.5);
+            background-color: rgba(0, 0, 0, 0.5);
             animation: fadeIn 0.3s ease;
         }
 
@@ -307,7 +335,7 @@
             padding: 0;
             width: 400px;
             border-radius: 15px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             animation: slideIn 0.3s ease;
             color: white;
         }
@@ -315,7 +343,7 @@
         .modal-header {
             padding: 20px;
             text-align: center;
-            border-bottom: 1px solid rgba(255,255,255,0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .modal-header h2 {
@@ -337,7 +365,7 @@
         .modal-footer {
             padding: 20px;
             text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.2);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .modal-button {
@@ -369,13 +397,25 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         @keyframes slideIn {
-            from { transform: translateY(-50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         .confirmacao-vazia {
@@ -384,9 +424,11 @@
             color: #666;
             font-size: 16px;
         }
+
         .confirmacao-vazia p {
             margin: 10px 0;
         }
+
         .confirmacao-icone {
             font-size: 64px;
             margin-bottom: 20px;
@@ -399,6 +441,7 @@
             width: 82px;
             text-align: center;
         }
+
         .acao-container img {
             width: 18px;
             cursor: pointer;
@@ -406,307 +449,559 @@
         }
     </style>
 </head>
+
 <body>
 
-<div id="desktop">
-    <div id="desktopHeader">
-        <div id="desktopTitlebar">
-            <h1 class="applicationTitle">SisTec<label class="vSistec"></label></h1>
-            <h2 class="tagline">Sistema Nacional de Informações - Versão de TESTE para Automação</h2>
-            <div id="topNav">
-                <ul><li>USUÁRIO TESTE - PERFIL DEMANDANTE - INSTITUTO FEDERAL DO PARÁ</li></ul>
-            </div>
-        </div>
-        <div id="desktopNavbar">
-            <ul id="abas">
-                <li id="bolsaFormacaoIdappLi" class="abaPrincipal abaAtivaEsquerda"><a id="bolsaFormacaoIdapp" class="abaAtivaDireita" href="#">Bolsa Formação</a></li>
-                <li id="mediotecIdAppLi" class="abaPrincipal abaInativaEsquerda"><a id="mediotecIdApp" class="abaInativaDireita" href="#">Mediotec Privadas</a></li>
-                <li id="noticiasIdAppLi" class="abaPrincipal abaInativaEsquerda"><a id="noticiasIdApp" class="abaInativaDireita" href="#">Notícias</a></li>
-                <li id="pronatecIdAppLi" class="abaPrincipal abaInativaEsquerda"><a id="pronatecIdApp" class="abaInativaDireita" href="#">Pronatec</a></li>
-                <li id="pronatecVoluntarioIdAppLi" class="abaPrincipal abaInativaEsquerda"><a id="pronatecVoluntarioIdApp" class="abaInativaDireita" href="#">Pronatec Voluntário</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="pageWrapper">
-        <div id="sideColumn2">
-            <div id="files-panel_header" class="panel-header">
-                <div id="files-panel_headerContent"><h2 id="files-panel_title" style="display: none;">Menu Bolsa Formação</h2></div>
-            </div>
-            <div id="files-panel" class="panel">
-                <div id="arvoreMenu" style="display: none;">
-                    <ul id="tree1">
-                        <li><span id="MatriculaIdApp" style="cursor: pointer; font-weight: bold;">Matrícula</span>
-                            <ul id="MatriculaIdApp_sub" style="display: none; margin-left: 20px; margin-top: 5px;">
-                                <li><a id="CadastrarPreMatriculaIdApp" href="#" style="text-decoration: none; color: #004080;">Cadastrar Pré-Matrícula</a></li>
-                            </ul>
-                        </li>
+    <div id="desktop">
+        <div id="desktopHeader">
+            <div id="desktopTitlebar">
+                <h1 class="applicationTitle">SisTec<label class="vSistec"></label></h1>
+                <h2 class="tagline">Sistema Nacional de Informações - Versão de TESTE para Automação</h2>
+                <div id="topNav">
+                    <ul>
+                        <li>USUÁRIO TESTE - PERFIL DEMANDANTE - INSTITUTO FEDERAL DO PARÁ</li>
                     </ul>
                 </div>
             </div>
+            <div id="desktopNavbar">
+                <ul id="abas">
+                    <li id="bolsaFormacaoIdappLi" class="abaPrincipal abaAtivaEsquerda"><a id="bolsaFormacaoIdapp"
+                            class="abaAtivaDireita" href="#">Bolsa Formação</a></li>
+                    <li id="mediotecIdAppLi" class="abaPrincipal abaInativaEsquerda"><a id="mediotecIdApp"
+                            class="abaInativaDireita" href="#">Mediotec Privadas</a></li>
+                    <li id="noticiasIdAppLi" class="abaPrincipal abaInativaEsquerda"><a id="noticiasIdApp"
+                            class="abaInativaDireita" href="#">Notícias</a></li>
+                    <li id="pronatecIdAppLi" class="abaPrincipal abaInativaEsquerda"><a id="pronatecIdApp"
+                            class="abaInativaDireita" href="#">Pronatec</a></li>
+                    <li id="pronatecVoluntarioIdAppLi" class="abaPrincipal abaInativaEsquerda"><a
+                            id="pronatecVoluntarioIdApp" class="abaInativaDireita" href="#">Pronatec Voluntário</a></li>
+                </ul>
+            </div>
         </div>
 
-        <div id="mainColumn">
-            <div id="mainPanel_header" class="panel-header">
-                <div id="mainPanel_headerContent">
-                    <span id="OndeEstouLabel" style="font-weight: bold;">Onde Estou</span>
-                    <span id="mainPanel_title" style="color: #098ed1;"></span>
-                </div>
-            </div>
-            <div id="mainPanel" class="panel painelPrincipal">
-                <!-- TELA DE PESQUISA -->
-                <div id="telaPesquisa">
-                    <form id="formPesquisaPreMatricula">
-                        <div><label class="blocoMenor">Demandante:</label> <input type="text" value="INSTITUTO FEDERAL DO PARÁ - CAMPUS TUCURUÍ" disabled style="width: 400px;"></div>
-                        <div><label class="blocoMenor">UF *:</label> <select id="uf"><option value="">Selecione...</option><option value="PA">PA - PARÁ</option></select></div>
-                        <div><label class="blocoMenor">Município *:</label> <select id="municipio"><option value="">SELECIONE...</option></select></div>
-                        <div><label class="blocoMenor">Unidade de Ensino:</label> <select><option>SELECIONE...</option></select></div>
-                        <div style="margin-top: 15px;">
-                            <input type="button" id="botaoPesquisar" value="Pesquisar" class="inputButton">
-                            <input type="button" value="Limpar" class="inputButton">
-                        </div>
-                    </form>
-                    <div id="gridListarPreMatriculas">
-                        <hr><span class="tituloGrid">Listar Pré-Matrículas</span><hr>
-                        <table id="gridListarPreMatriculas_Grid" class="tableGrid" style="display: none;">
-                            <thead>
-                                <tr>
-                                    <th id="noPessoaJuridica" class="sortedGrid">Unidade de Ensino</th>
-                                    <th id="dsIdentificadorTurma" class="sortedGrid">Turma</th>
-                                    <th id="dsEixoTecnologico" class="sortedGrid">Eixo Tecnológico</th>
-                                    <th id="nuCargaHorariaCurso" class="sortedGrid">Carga Horária</th>
-                                    <th id="dsModalidade" class="sortedGrid">Modalidade de Ensino</th>
-                                    <th id="dtInicioTurma" class="sortedGrid">Data Início da Turma</th>
-                                    <th id="dtPrevistaTermino" class="sortedGrid">Data Prevista de Término</th>
-                                    <th id="nuVagas" class="sortedGrid">Vagas</th>
-                                    <th id="vagasStatus" class="">
-                                        <span style="color:darkGreen;">Vagas ocupadas</span>
-                                        / <span style="color:Orange;">Prioritárias</span>
-                                        / <span style="color:red;">Pré-Matrículas</span>
-                                    </th>
-                                    <th id="acao">Ações</th>
-                                </tr>
-                            </thead>
-                            <tbody id="gridBody">
-                                <!-- Linha será inserida via JavaScript -->
-                            </tbody>
-                        </table>
+        <div id="pageWrapper">
+            <div id="sideColumn2">
+                <div id="files-panel_header" class="panel-header">
+                    <div id="files-panel_headerContent">
+                        <h2 id="files-panel_title" style="display: none;">Menu Bolsa Formação</h2>
                     </div>
                 </div>
+                <div id="files-panel" class="panel">
+                    <div id="arvoreMenu" style="display: none;">
+                        <ul id="tree1">
+                            <li><span id="MatriculaIdApp" style="cursor: pointer; font-weight: bold;">Matrícula</span>
+                                <ul id="MatriculaIdApp_sub" style="display: none; margin-left: 20px; margin-top: 5px;">
+                                    <li><a id="CadastrarPreMatriculaIdApp" href="#"
+                                            style="text-decoration: none; color: #004080;">Cadastrar Pré-Matrícula</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-                <!-- TELA DO FORMULÁRIO -->
-                <div id="telaFormulario" style="display: none;">
-                    <form id="formPreMatricula">
-                        <div class="toolbarTabs">
-                            <ul class="tab-menu">
-                                <li id="abaPessoais" class="selected" data-aba="divDadosPessoais">Dados Pessoais</li>
-                                <li id="abaEscolaridade" data-aba="divEscolaridade">Escolaridade</li>
-                                <li id="abaPerfil" data-aba="divPerfil">Perfil</li>
-                                <li id="abaConfirmacao" data-aba="divConfirmacao">Confirmação</li>
-                            </ul>
-                        </div>
-
-                        <!-- DADOS PESSOAIS -->
-                        <div id="divDadosPessoais" class="content_abas">
-                            <fieldset>
-                                <legend>Dados da Oferta</legend>
-                                <div><label class="bloco">Município:</label> <input type="text" value="GOIANÉSIA DO PARÁ" readonly></div>
-                                <div><label class="bloco">Unidade de Ensino:</label> <input type="text" value="IFPA - CAMPUS TUCURUÍ" readonly></div>
-                                <div><label class="bloco">Oferta de Turma:</label> <input type="text" value="AGENTE DE DESENVOLVIMENTO COOPERATIVISTA N1/2026" readonly></div>
-                                <div><label class="bloco">Código da Oferta:</label> <input type="text" value="4029" readonly></div>
-                            </fieldset>
-
-                            <fieldset id="fieldDadosDoAluno">
-                                <legend>Dados do Aluno</legend>
-                                <div><label class="bloco" for="aluno_cpf">CPF: <span class="obrigatorio">*</span></label><input class="campo" id="aluno_cpf" name="aluno_cpf" type="text" maxlength="14" placeholder="000.000.000-00"></div>
-                                <div><div id="aluno_captchaContent"><img id="captchaImage" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='50' viewBox='0 0 200 50'%3E%3Crect width='200' height='50' fill='%23333'/%3E%3Ctext x='20' y='35' font-family='monospace' font-size='28' fill='%23ff9800' font-weight='bold'%3ES4T3C%3C/text%3E%3C/svg%3E"></div><img id="aluno_captchaImg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23555' stroke-width='2'%3E%3Cpath d='M23 4v6h-6v-6M1 20v-6h6v6'/%3E%3Cpath d='M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15'/%3E%3C/svg%3E" style="cursor:pointer;" onclick="refreshCaptcha()"></div>
-                                <div><label class="bloco" for="aluno_captcha">Preencha com o conteúdo da imagem: <span class="obrigatorio">*</span></label><input class="campo" type="text" id="aluno_captcha" name="aluno_captcha" maxlength="6" style="width:150px;"><button type="button" id="aluno_captcha_button" class="botaoPesquisa" onclick="simularBusca()">Buscar</button></div>
-                                <div><label class="bloco" for="aluno_pis">NIS/PIS:</label><input class="campo" type="text" maxlength="29" id="aluno_pis" name="aluno_pis" style="width:300px;"></div>
-                                <div><label class="bloco" for="aluno_nome_completo">Nome Completo: <span class="obrigatorio">*</span></label><input class="campo" type="text" maxlength="160" id="aluno_nome_completo" name="aluno_nome_completo" style="width:400px;"></div>
-                                <div id="divCadNomeSocial"><label class="bloco">Cadastrar Nome Social: <span class="obrigatorio">*</span></label><span class="radio-grupo"><label class="radio-label"><input type="radio" value="1" id="isCadastrarNomeSocial" name="cadastrar_no_social"> Sim</label><label class="radio-label"><input type="radio" value="0" id="notCadastrarNomeSocial" name="cadastrar_no_social" checked=""> Não</label></span></div>
-                                <div id="box_nome_social" style="display: none;"><div><label class="bloco" for="aluno_nome_social">Nome Social <span class="obrigatorio">*</span></label><input class="campo" type="text" id="aluno_nome_social" name="no_social" maxlength="150" style="width:400px;"></div><div><label class="bloco" for="aluno_nome_social_anexo">Documento(s) Comprobatório(s):</label><input class="campo" id="aluno_nome_social_anexo" type="file" name="anexos[]" accept="image/jpeg,image/gif,image/png,application/pdf"><span class="arquivo_tip">Tamanho Máximo: 2MB | Formatos: PDF, JPG, PNG</span></div></div>
-                                <div><label class="bloco" for="aluno_dt_nascimento">Data de Nascimento: <span class="obrigatorio">*</span></label><input class="campo" type="date" id="aluno_dt_nascimento" name="aluno_dt_nascimento"></div>
-                                <div><label class="bloco">Sexo: <span class="obrigatorio">*</span></label><span class="radio-grupo"><label><input type="radio" value="F" name="aluno_sexo"> Feminino</label><label><input type="radio" value="M" name="aluno_sexo"> Masculino</label></span></div>
-                                <div><label class="bloco" for="aluno_nome_mae">Nome da Mãe: <span class="obrigatorio">*</span></label><input class="campo" type="text" maxlength="160" id="aluno_nome_mae" name="aluno_nome_mae" style="width:400px;"></div>
-                                <div><label class="bloco" for="aluno_nome_pai">Nome do Pai:</label><input class="campo" type="text" maxlength="160" id="aluno_nome_pai" name="aluno_nome_pai" style="width:400px;"></div>
-                                <div><label class="bloco" for="aluno_naturalidade">Naturalidade:</label><input class="campo" type="text" maxlength="60" id="aluno_naturalidade" name="aluno_naturalidade"></div>
-                                <div><label class="bloco" for="aluno_identidade">Identidade:</label><input class="campo" type="text" maxlength="30" id="aluno_identidade" name="aluno_identidade"></div>
-                                <div><label class="bloco" for="aluno_orgao_expeditor">Órgão Expedidor:</label><input class="campo" type="text" maxlength="30" id="aluno_orgao_expeditor" name="aluno_orgao_expeditor"></div>
-                                <div><label class="bloco" for="aluno_cor_pele">Cor da pele e/ou raça: <span class="obrigatorio">*</span></label><select class="campo" id="aluno_cor_pele" name="aluno_cor_pele"><option value="">Selecione...</option><option value="4">Amarela</option><option value="1">Branca</option><option value="5">Indígena</option><option value="3">Parda</option><option value="2">Preta</option><option value="6">Sem declaração</option></select></div>
-                            </fieldset>
-
-                            <fieldset id="fieldEnderecoResidencial">
-                                <legend>Endereço Residencial</legend>
-                                <div><label class="bloco" for="aluno_cep">CEP: <span class="obrigatorio">*</span></label><input class="campo" type="text" id="aluno_cep" name="aluno_cep" maxlength="9" placeholder="00000-000"></div>
-                                <div><label class="bloco" for="aluno_logradouro">Endereço: <span class="obrigatorio">*</span></label><input class="campo" type="text" maxlength="200" id="aluno_logradouro" name="aluno_logradouro" style="width:500px;"></div>
-                                <div><label class="bloco" for="aluno_bairro">Bairro: <span class="obrigatorio">*</span></label><input class="campo" type="text" maxlength="100" id="aluno_bairro" name="aluno_bairro" style="width:300px;"></div>
-                                <div><label class="bloco" for="aluno_uf">UF: <span class="obrigatorio">*</span></label><select class="campo" id="aluno_uf" name="aluno_uf" onchange="carregarMunicipiosForm()"><option value="">SELECIONE...</option><option value="AC">AC - Acre</option><option value="AL">AL - Alagoas</option><option value="AM">AM - Amazonas</option><option value="AP">AP - Amapá</option><option value="BA">BA - Bahia</option><option value="CE">CE - Ceará</option><option value="DF">DF - Distrito Federal</option><option value="ES">ES - Espírito Santo</option><option value="GO">GO - Goiás</option><option value="MA">MA - Maranhão</option><option value="MG">MG - Minas Gerais</option><option value="MS">MS - Mato Grosso do Sul</option><option value="MT">MT - Mato Grosso</option><option value="PA" selected>PA - Pará</option><option value="PB">PB - Paraíba</option><option value="PE">PE - Pernambuco</option><option value="PI">PI - Piauí</option><option value="PR">PR - Paraná</option><option value="RJ">RJ - Rio de Janeiro</option><option value="RN">RN - Rio Grande do Norte</option><option value="RO">RO - Rondônia</option><option value="RR">RR - Roraima</option><option value="RS">RS - Rio Grande do Sul</option><option value="SC">SC - Santa Catarina</option><option value="SE">SE - Sergipe</option><option value="SP">SP - São Paulo</option><option value="TO">TO - Tocantins</option></select></div>
-                                <div><label class="bloco" for="aluno_municipio">Município: <span class="obrigatorio">*</span></label><select class="campo" id="aluno_municipio" name="aluno_municipio"><option value="">SELECIONE...</option></select></div>
-                                <div><label class="bloco" for="aluno_complemento">Complemento:</label><input class="campo" type="text" maxlength="100" id="aluno_complemento" name="aluno_complemento" style="width:300px;"></div>
-                                <div><label class="bloco" for="aluno_numero">Número: <span class="obrigatorio">*</span></label><input class="campo" type="text" maxlength="10" id="aluno_numero" name="aluno_numero" style="width:100px;"></div>
-                            </fieldset>
-
-                            <fieldset id="fieldContato">
-                                <legend>Contato</legend>
-                                <div><label class="bloco" for="aluno_email">E-mail: <span class="obrigatorio">*</span></label><input class="campo" type="email" maxlength="100" id="aluno_email" name="aluno_email" style="width:300px;"></div>
-                                <div><label class="bloco" for="aluno_telefone">Telefone: <span class="obrigatorio">*</span></label><input class="campo" type="text" maxlength="15" id="aluno_telefone" name="aluno_telefone" placeholder="(00) 00000-0000" style="width:150px;"></div>
-                            </fieldset>
-                        </div>
-
-                        <!-- ESCOLARIDADE -->
-                        <div id="divEscolaridade" class="content_abas abas_hidden">
-                            <fieldset>
-                                <legend>Escolaridade</legend>
-                                <div><label class="bloco" for="aluno_escolaridade">Escolaridade: <span class="obrigatorio">*</span></label><select class="campo" id="aluno_escolaridade" name="aluno_escolaridade"><option value="">Selecione...</option><option value="1">Ensino Fundamental Incompleto</option><option value="2">Ensino Fundamental Completo</option><option value="3">Ensino Médio Incompleto</option><option value="4">Ensino Médio Completo</option><option value="5">Ensino Superior Incompleto</option><option value="6">Ensino Superior Completo</option></select></div>
-                                <div><label class="bloco" for="aluno_ano_conclusao">Ano de Conclusão:</label><input class="campo" type="text" maxlength="4" id="aluno_ano_conclusao" name="aluno_ano_conclusao"></div>
-                                <div><label class="bloco" for="aluno_instituicao_ensino">Instituição de Ensino:</label><input class="campo" type="text" maxlength="100" id="aluno_instituicao_ensino" name="aluno_instituicao_ensino" style="width:400px;"></div>
-                            </fieldset>
-                        </div>
-
-                        <!-- PERFIL -->
-                        <div id="divPerfil" class="content_abas abas_hidden">
-                            <fieldset id="fieldPne">
-                                <legend>Pessoa com Deficiência</legend>
-                                <div><label class="bloco">É pessoa com deficiência? <span class="obrigatorio">*</span></label>
-                                    <span id="spanPne"><label for="aluno_pne_S"><input class="radio campo" type="radio" value="1" id="aluno_pne_S" name="aluno_pne"> Sim</label><label for="aluno_pne_N"><input class="radio campo" type="radio" value="0" id="aluno_pne_N" name="aluno_pne" checked=""> Não</label></span>
-                                </div>
-                                <div id="id_pneTipos" style="display: none;">
-                                    <div><label class="bloco">Tipo de Deficiência: <span class="obrigatorio">*</span></label></div>
-                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_pne_cegueira" name="aluno_pne_cegueira"> Cegueira</label></div>
-                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_pne_baixa_visao" name="aluno_pne_baixa_visao"> Baixa Visão</label></div>
-                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_pne_surdez" name="aluno_pne_surdez"> Surdez</label></div>
-                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_pne_auditiva" name="aluno_pne_auditiva"> Deficiência Auditiva</label></div>
-                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_pne_fisica" name="aluno_pne_fisica"> Deficiência Física</label></div>
-                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_pne_intelectual" name="aluno_pne_intelectual"> Deficiência Intelectual</label></div>
-                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_pne_multipla" name="aluno_pne_multipla"> Deficiência Múltipla</label></div>
-                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_pne_autismo" name="aluno_pne_autismo"> Transtorno do Espectro Autista</label></div>
-                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_pne_sindrome_down" name="aluno_pne_sindrome_down"> Síndrome de Down</label></div>
-                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_pne_superdotacao" name="aluno_pne_superdotacao"> Superdotação</label></div>
-                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_pne_outro" name="aluno_pne_outro"> Outro</label></div>
-                                    <div class="checkboxAway" id="divPneOutroTexto" style="display: none;"><label class="bloco" for="aluno_pne_tipos_outro">Qual? <span class="obrigatorio">*</span></label><input class="campo" type="text" id="aluno_pne_tipos_outro" name="aluno_pne_tipos_outro" style="width:300px;"></div>
-                                </div>
-                            </fieldset>
-
-                            <fieldset id="fieldAuxilioFinanceiro">
-                                <legend>Auxílio Financeiro</legend>
-                                <div><label class="bloco">Recebe auxílio financeiro de programas de transferência de renda? <span class="obrigatorio">*</span></label>
-                                    <span id="spanAuxilio"><label for="aluno_auxilio_financeiro_transferencia_renda_S"><input class="radio campo" type="radio" value="1" id="aluno_auxilio_financeiro_transferencia_renda_S" name="aluno_auxilio_financeiro_transferencia_renda"> Sim</label><label for="aluno_auxilio_financeiro_transferencia_renda_N"><input class="radio campo" type="radio" value="0" id="aluno_auxilio_financeiro_transferencia_renda_N" name="aluno_auxilio_financeiro_transferencia_renda" checked=""> Não</label></span>
-                                </div>
-                                <div id="divBolsaRenda" style="display: none;">
-                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_auxilio_bolsa_familia" name="aluno_auxilio_bolsa_familia"> Bolsa Família</label></div>
-                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_auxilio_bpc" name="aluno_auxilio_bpc"> BPC (Benefício de Prestação Continuada)</label></div>
-                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_auxilio_outro" name="aluno_auxilio_outro"> Outro</label></div>
-                                    <div class="checkboxAway" id="divAuxilioOutroTexto" style="display: none;"><label class="bloco" for="aluno_auxilio_outro_texto">Qual? <span class="obrigatorio">*</span></label><input class="campo" type="text" id="aluno_auxilio_outro_texto" name="aluno_auxilio_outro_texto" style="width:300px;"></div>
-                                </div>
-                            </fieldset>
-
-                            <fieldset id="fieldPopulacaoCampo">
-                                <legend>População do Campo</legend>
-                                <div><label class="bloco">Pertence à população do campo? <span class="obrigatorio">*</span></label>
-                                    <span id="spanPopulacaoCampo"><label for="aluno_populacao_campo_S"><input class="radio campo" type="radio" value="1" id="aluno_populacao_campo_S" name="aluno_populacao_campo"> Sim</label><label for="aluno_populacao_campo_N"><input class="radio campo" type="radio" value="0" id="aluno_populacao_campo_N" name="aluno_populacao_campo" checked=""> Não</label></span>
-                                </div>
-                                <div id="divPopulacaoCampo" style="display: none;">
-                                    <div><label class="bloco">Atividade: <span class="obrigatorio">*</span></label></div>
-                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_populacao_campo_agricultor" name="aluno_populacao_campo_agricultor"> Agricultor Familiar</label></div>
-                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_populacao_campo_assentado" name="aluno_populacao_campo_assentado"> Assentado da Reforma Agrária</label></div>
-                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_populacao_campo_pescador" name="aluno_populacao_campo_pescador"> Pescador Artesanal</label></div>
-                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_populacao_campo_extrativista" name="aluno_populacao_campo_extrativista"> Extrativista</label></div>
-                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_populacao_campo_ribeirinho" name="aluno_populacao_campo_ribeirinho"> Ribeirinho</label></div>
-                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_populacao_campo_quilombola" name="aluno_populacao_campo_quilombola"> Quilombola</label></div>
-                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_populacao_campo_indigena" name="aluno_populacao_campo_indigena"> Indígena</label></div>
-                                    <div class="checkboxAway"><label><input type="checkbox" id="aluno_populacao_campo_outros" name="aluno_populacao_campo_outros"> Outros</label></div>
-                                </div>
-                            </fieldset>
-
-                            <fieldset id="fieldDesemprego">
-                                <legend>Desemprego</legend>
-                                <div><label class="bloco">Está desempregado? <span class="obrigatorio">*</span></label>
-                                    <span id="spanDesemprego"><label for="aluno_desempregado_S"><input class="radio campo" type="radio" value="1" id="aluno_desempregado_S" name="aluno_desempregado"> Sim</label><label for="aluno_desempregado_N"><input class="radio campo" type="radio" value="0" id="aluno_desempregado_N" name="aluno_desempregado" checked=""> Não</label></span>
-                                </div>
-                                <div id="divSeguroDesemprego" style="display: none;">
-                                    <div><label class="bloco">Recebe Seguro Desemprego? <span class="obrigatorio">*</span></label>
-                                        <span id="spanSeguroDesemprego"><label for="aluno_seguro_desemprego_S"><input class="radio campo" type="radio" value="1" id="aluno_seguro_desemprego_S" name="aluno_seguro_desemprego"> Sim</label><label for="aluno_seguro_desemprego_N"><input class="radio campo" type="radio" value="0" id="aluno_seguro_desemprego_N" name="aluno_seguro_desemprego" checked=""> Não</label></span>
-                                    </div>
-                                </div>
-                            </fieldset>
-
-                            <fieldset id="fieldPovoIndigena">
-                                <legend>Povo Indígena</legend>
-                                <div><label class="bloco">É membro de povo indígena? <span class="obrigatorio">*</span></label>
-                                    <span id="spanIndigena"><label for="aluno_povo_indigena_S"><input class="radio campo" type="radio" value="1" id="aluno_povo_indigena_S" name="aluno_povo_indigena"> Sim</label><label for="aluno_povo_indigena_N"><input class="radio campo" type="radio" value="0" id="aluno_povo_indigena_N" name="aluno_povo_indigena" checked=""> Não</label></span>
-                                </div>
-                                <div id="divPovoIndigenaEspecificacao" style="display: none;"><label class="bloco" for="aluno_povo_indigena_texto">Escreva o nome do povo indígena conforme a FUNAI <span class="obrigatorio">*</span></label><input class="campo" type="text" id="aluno_povo_indigena_texto" name="aluno_povo_indigena_texto" value=""></div>
-                            </fieldset>
-
-                            <fieldset id="fieldComunidadeQuilombola">
-                                <legend>Comunidade Quilombola</legend>
-                                <div><label class="bloco">É membro de comunidade Quilombola? <span class="obrigatorio">*</span></label>
-                                    <span id="spanQuilombola"><label for="aluno_comunidade_quilombola_S"><input class="radio campo" type="radio" value="1" id="aluno_comunidade_quilombola_S" name="aluno_comunidade_quilombola"> Sim</label><label for="aluno_comunidade_quilombola_N"><input class="radio campo" type="radio" value="0" id="aluno_comunidade_quilombola_N" name="aluno_comunidade_quilombola" checked=""> Não</label></span>
-                                </div>
-                                <div id="divComunidadeQuilombolaEspecificacao" style="display: none;"><label class="bloco" for="aluno_comunidade_quilombola_texto">Escreva o nome da comunidade quilombola <span class="obrigatorio">*</span></label><input class="campo" type="text" id="aluno_comunidade_quilombola_texto" name="aluno_comunidade_quilombola_texto" value=""></div>
-                            </fieldset>
-
-                            <fieldset id="fieldSetReservista">
-                                <legend>Dados Reservista</legend>
-                                <div><label class="bloco">Possui Certificado de Reservista ou Atirador de Tiros de Guerra? <span class="obrigatorio">*</span></label>
-                                    <span id="spanReservista"><label for="aluno_soldado_cidadao_S"><input class="radio campo" type="radio" value="S" id="aluno_soldado_cidadao_S" name="aluno_soldado_cidadao"> Sim</label><label for="aluno_soldado_cidadao_N"><input class="radio campo" type="radio" value="N" id="aluno_soldado_cidadao_N" name="aluno_soldado_cidadao" checked=""> Não</label></span>
-                                </div>
-                                <div id="divReservista" style="display: none;"><div><label class="bloco" for="aluno_soldado_cidadao_numero_certificado_reservista">Nº Certificado de Reservista <span class="obrigatorio">*</span></label><input class="campo" type="text" maxlength="30" id="aluno_soldado_cidadao_numero_certificado_reservista" name="aluno_soldado_cidadao_numero_certificado_reservista"></div>
-                                <div><label class="bloco" for="aluno_soldado_cidadao_dt_emissao_reservista">Data de Emissão <span class="obrigatorio">*</span></label><input class="campo alternate" type="date" id="aluno_soldado_cidadao_dt_emissao_reservista" name="aluno_soldado_cidadao_dt_emissao_reservista"></div></div>
-                            </fieldset>
-                        </div>
-
-                        <!-- CONFIRMAÇÃO - TOTALMENTE VAZIA -->
-                        <div id="divConfirmacao" class="content_abas abas_hidden">
-                            <div class="confirmacao-vazia">
-                                <div class="confirmacao-icone">📋</div>
-                                <p><strong>Nenhum dado para confirmar</strong></p>
-                                <p>Esta área está propositalmente vazia conforme solicitado.</p>
-                                <p>Utilize os botões abaixo para navegar ou finalizar o processo.</p>
+            <div id="mainColumn">
+                <div id="mainPanel_header" class="panel-header">
+                    <div id="mainPanel_headerContent">
+                        <span id="OndeEstouLabel" style="font-weight: bold;">Onde Estou</span>
+                        <span id="mainPanel_title" style="color: #098ed1;"></span>
+                    </div>
+                </div>
+                <div id="mainPanel" class="panel painelPrincipal">
+                    <!-- TELA DE PESQUISA -->
+                    <div id="telaPesquisa">
+                        <form id="formPesquisaPreMatricula">
+                            <div><label class="blocoMenor">Demandante:</label> <input type="text"
+                                    value="INSTITUTO FEDERAL DO PARÁ - CAMPUS TUCURUÍ" disabled style="width: 400px;">
                             </div>
+                            <div><label class="blocoMenor">UF *:</label> <select id="uf">
+                                    <option value="">Selecione...</option>
+                                    <option value="PA">PA - PARÁ</option>
+                                </select></div>
+                            <div><label class="blocoMenor">Município *:</label> <select id="municipio">
+                                    <option value="">SELECIONE...</option>
+                                </select></div>
+                            <div><label class="blocoMenor">Unidade de Ensino:</label> <select>
+                                    <option>SELECIONE...</option>
+                                </select></div>
+                            <div style="margin-top: 15px;">
+                                <input type="button" id="botaoPesquisar" value="Pesquisar" class="inputButton">
+                                <input type="button" value="Limpar" class="inputButton">
+                            </div>
+                        </form>
+                        <div id="gridListarPreMatriculas">
+                            <hr><span class="tituloGrid">Listar Pré-Matrículas</span>
+                            <hr>
+                            <table id="gridListarPreMatriculas_Grid" class="tableGrid" style="display: none;">
+                                <thead>
+                                    <tr>
+                                        <th id="noPessoaJuridica" class="sortedGrid">Unidade de Ensino</th>
+                                        <th id="dsIdentificadorTurma" class="sortedGrid">Turma</th>
+                                        <th id="dsEixoTecnologico" class="sortedGrid">Eixo Tecnológico</th>
+                                        <th id="nuCargaHorariaCurso" class="sortedGrid">Carga Horária</th>
+                                        <th id="dsModalidade" class="sortedGrid">Modalidade de Ensino</th>
+                                        <th id="dtInicioTurma" class="sortedGrid">Data Início da Turma</th>
+                                        <th id="dtPrevistaTermino" class="sortedGrid">Data Prevista de Término</th>
+                                        <th id="nuVagas" class="sortedGrid">Vagas</th>
+                                        <th id="vagasStatus" class="">
+                                            <span style="color:darkGreen;">Vagas ocupadas</span>
+                                            / <span style="color:Orange;">Prioritárias</span>
+                                            / <span style="color:red;">Pré-Matrículas</span>
+                                        </th>
+                                        <th id="acao">Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="gridBody">
+                                    <!-- Linha será inserida via JavaScript -->
+                                </tbody>
+                            </table>
                         </div>
-                    </form>
-                </div>
-            </div>
-
-            <!-- BARRA DE NAVEGAÇÃO -->
-            <div id="panelInferior_header" class="panel-header">
-                <div id="panelInferior_headerContent" style="display: flex; justify-content: space-between; align-items: center;">
-                    <div style="display: flex; gap: 10px;">
-                        <input type="button" id="btAnterior" value="Anterior" class="botaoMaior" style="background: #6c757d; color: white;">
-                        <input type="button" id="btProximo" value="Próximo" class="botaoMaior" style="background: #28a745; color: white;">
-                        <input type="button" id="btSalvar" value="Salvar" class="botaoMaior" style="background: #28a745; color: white; display: none;">
                     </div>
-                    <div>
-                        <input type="button" id="btNovaPreMatricula" value="Nova Pré-Matrícula" class="botaoMaior" style="background: #ff9800; color: white; font-weight: bold;">
-                        <input type="button" id="btVoltar" value="Cancelar" class="botaoMaior" style="background: #dc3545; color: white;">
+
+                    <!-- TELA DO FORMULÁRIO -->
+                    <div id="telaFormulario" style="display: none;">
+                        <form id="formPreMatricula">
+                            <div class="toolbarTabs">
+                                <ul class="tab-menu">
+                                    <li id="abaPessoais" class="selected" data-aba="divDadosPessoais">Dados Pessoais
+                                    </li>
+                                    <li id="abaEscolaridade" data-aba="divEscolaridade">Escolaridade</li>
+                                    <li id="abaPerfil" data-aba="divPerfil">Perfil</li>
+                                    <li id="abaConfirmacao" data-aba="divConfirmacao">Confirmação</li>
+                                </ul>
+                            </div>
+
+                            <!-- DADOS PESSOAIS -->
+                            <div id="divDadosPessoais" class="content_abas">
+                                <fieldset>
+                                    <legend>Dados da Oferta</legend>
+                                    <div><label class="bloco">Município:</label> <input type="text"
+                                            value="GOIANÉSIA DO PARÁ" readonly></div>
+                                    <div><label class="bloco">Unidade de Ensino:</label> <input type="text"
+                                            value="IFPA - CAMPUS TUCURUÍ" readonly></div>
+                                    <div><label class="bloco">Oferta de Turma:</label> <input type="text"
+                                            value="AGENTE DE DESENVOLVIMENTO COOPERATIVISTA N1/2026" readonly></div>
+                                    <div><label class="bloco">Código da Oferta:</label> <input type="text" value="4029"
+                                            readonly></div>
+                                </fieldset>
+
+                                <fieldset id="fieldDadosDoAluno">
+                                    <legend>Dados do Aluno</legend>
+                                    <div><label class="bloco" for="aluno_cpf">CPF: <span
+                                                class="obrigatorio">*</span></label><input class="campo" id="aluno_cpf"
+                                            name="aluno_cpf" type="text" maxlength="14" placeholder="000.000.000-00">
+                                    </div>
+                                    <div>
+                                        <div id="aluno_captchaContent"><img id="captchaImage"
+                                                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='50' viewBox='0 0 200 50'%3E%3Crect width='200' height='50' fill='%23333'/%3E%3Ctext x='20' y='35' font-family='monospace' font-size='28' fill='%23ff9800' font-weight='bold'%3ES4T3C%3C/text%3E%3C/svg%3E"><br>
+                                        </div><img id="aluno_captchaImg"
+                                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23555' stroke-width='2'%3E%3Cpath d='M23 4v6h-6M1 20v-6h6'/%3E%3Cpath d='M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15'/%3E%3C/svg%3E"
+                                            style="cursor:pointer;" onclick="refreshCaptcha()">
+                                    </div>
+                                    <div><label class="bloco" for="aluno_captcha">Preencha com o conteúdo da imagem:
+                                            <span class="obrigatorio">*</span></label><input class="campo" type="text"
+                                            id="aluno_captcha" name="aluno_captcha" maxlength="6"
+                                            style="width:150px;"><button type="button" id="aluno_captcha_button"
+                                            class="botaoPesquisa" onclick="simularBusca()">Buscar</button></div>
+                                    <div><label class="bloco" for="aluno_pis">NIS/PIS:</label><input class="campo"
+                                            type="text" maxlength="29" id="aluno_pis" name="aluno_pis"
+                                            style="width:300px;"></div>
+                                    <div><label class="bloco" for="aluno_nome_completo">Nome Completo: <span
+                                                class="obrigatorio">*</span></label><input class="campo" type="text"
+                                            maxlength="160" id="aluno_nome_completo" name="aluno_nome_completo"
+                                            style="width:400px;"></div>
+                                    <div id="divCadNomeSocial"><label class="bloco">Cadastrar Nome Social: <span
+                                                class="obrigatorio">*</span></label><span class="radio-grupo"><label
+                                                class="radio-label"><input type="radio" value="1"
+                                                    id="isCadastrarNomeSocial" name="cadastrar_no_social">
+                                                Sim</label><label class="radio-label"><input type="radio" value="0"
+                                                    id="notCadastrarNomeSocial" name="cadastrar_no_social" checked="">
+                                                Não</label></span></div>
+                                    <div id="box_nome_social" style="display: none;">
+                                        <div><label class="bloco" for="aluno_nome_social">Nome Social <span
+                                                    class="obrigatorio">*</span></label><input class="campo" type="text"
+                                                id="aluno_nome_social" name="no_social" maxlength="150"
+                                                style="width:400px;"></div>
+                                        <div><label class="bloco" for="aluno_nome_social_anexo">Documento(s)
+                                                Comprobatório(s):</label><input class="campo"
+                                                id="aluno_nome_social_anexo" type="file" name="anexos[]"
+                                                accept="image/jpeg,image/gif,image/png,application/pdf"><span
+                                                class="arquivo_tip">Tamanho Máximo: 2MB | Formatos: PDF, JPG, PNG</span>
+                                        </div>
+                                    </div>
+                                    <div><label class="bloco" for="aluno_dt_nascimento">Data de Nascimento: <span
+                                                class="obrigatorio">*</span></label><input class="campo" type="date"
+                                            id="aluno_dt_nascimento" name="aluno_dt_nascimento"></div>
+                                    <div><label class="bloco">Sexo: <span class="obrigatorio">*</span></label><span
+                                            class="radio-grupo"><label><input type="radio" value="F" name="aluno_sexo">
+                                                Feminino</label><label><input type="radio" value="M" name="aluno_sexo">
+                                                Masculino</label></span></div>
+                                    <div><label class="bloco" for="aluno_nome_mae">Nome da Mãe: <span
+                                                class="obrigatorio">*</span></label><input class="campo" type="text"
+                                            maxlength="160" id="aluno_nome_mae" name="aluno_nome_mae"
+                                            style="width:400px;"></div>
+                                    <div><label class="bloco" for="aluno_nome_pai">Nome do Pai:</label><input
+                                            class="campo" type="text" maxlength="160" id="aluno_nome_pai"
+                                            name="aluno_nome_pai" style="width:400px;"></div>
+                                    <div><label class="bloco" for="aluno_naturalidade">Naturalidade:</label><input
+                                            class="campo" type="text" maxlength="60" id="aluno_naturalidade"
+                                            name="aluno_naturalidade"></div>
+                                    <div><label class="bloco" for="aluno_identidade">Identidade:</label><input
+                                            class="campo" type="text" maxlength="30" id="aluno_identidade"
+                                            name="aluno_identidade"></div>
+                                    <div><label class="bloco" for="aluno_orgao_expeditor">Órgão Expedidor:</label><input
+                                            class="campo" type="text" maxlength="30" id="aluno_orgao_expeditor"
+                                            name="aluno_orgao_expeditor"></div>
+                                    <div><label class="bloco" for="aluno_cor_pele">Cor da pele e/ou raça: <span
+                                                class="obrigatorio">*</span></label><select class="campo"
+                                            id="aluno_cor_pele" name="aluno_cor_pele">
+                                            <option value="">Selecione...</option>
+                                            <option value="4">Amarela</option>
+                                            <option value="1">Branca</option>
+                                            <option value="5">Indígena</option>
+                                            <option value="3">Parda</option>
+                                            <option value="2">Preta</option>
+                                            <option value="6">Sem declaração</option>
+                                        </select></div>
+                                </fieldset>
+
+                                <fieldset id="fieldEnderecoResidencial">
+                                    <legend>Endereço Residencial</legend>
+                                    <div><label class="bloco" for="aluno_cep">CEP: <span
+                                                class="obrigatorio">*</span></label><input class="campo" type="text"
+                                            id="aluno_cep" name="aluno_cep" maxlength="9" placeholder="00000-000"></div>
+                                    <div><label class="bloco" for="aluno_logradouro">Endereço: <span
+                                                class="obrigatorio">*</span></label><input class="campo" type="text"
+                                            maxlength="200" id="aluno_logradouro" name="aluno_logradouro"
+                                            style="width:500px;"></div>
+                                    <div><label class="bloco" for="aluno_bairro">Bairro: <span
+                                                class="obrigatorio">*</span></label><input class="campo" type="text"
+                                            maxlength="100" id="aluno_bairro" name="aluno_bairro" style="width:300px;">
+                                    </div>
+                                    <div><label class="bloco" for="aluno_uf">UF: <span
+                                                class="obrigatorio">*</span></label><select class="campo" id="aluno_uf"
+                                            name="aluno_uf" onchange="carregarMunicipiosForm()">
+                                            <option value="">SELECIONE...</option>
+                                            <option value="AC">AC - Acre</option>
+                                            <option value="AL">AL - Alagoas</option>
+                                            <option value="AM">AM - Amazonas</option>
+                                            <option value="AP">AP - Amapá</option>
+                                            <option value="BA">BA - Bahia</option>
+                                            <option value="CE">CE - Ceará</option>
+                                            <option value="DF">DF - Distrito Federal</option>
+                                            <option value="ES">ES - Espírito Santo</option>
+                                            <option value="GO">GO - Goiás</option>
+                                            <option value="MA">MA - Maranhão</option>
+                                            <option value="MG">MG - Minas Gerais</option>
+                                            <option value="MS">MS - Mato Grosso do Sul</option>
+                                            <option value="MT">MT - Mato Grosso</option>
+                                            <option value="PA" selected>PA - Pará</option>
+                                            <option value="PB">PB - Paraíba</option>
+                                            <option value="PE">PE - Pernambuco</option>
+                                            <option value="PI">PI - Piauí</option>
+                                            <option value="PR">PR - Paraná</option>
+                                            <option value="RJ">RJ - Rio de Janeiro</option>
+                                            <option value="RN">RN - Rio Grande do Norte</option>
+                                            <option value="RO">RO - Rondônia</option>
+                                            <option value="RR">RR - Roraima</option>
+                                            <option value="RS">RS - Rio Grande do Sul</option>
+                                            <option value="SC">SC - Santa Catarina</option>
+                                            <option value="SE">SE - Sergipe</option>
+                                            <option value="SP">SP - São Paulo</option>
+                                            <option value="TO">TO - Tocantins</option>
+                                        </select></div>
+                                    <div><label class="bloco" for="aluno_municipio">Município: <span
+                                                class="obrigatorio">*</span></label><select class="campo"
+                                            id="aluno_municipio" name="aluno_municipio">
+                                            <option value="">SELECIONE...</option>
+                                        </select></div>
+                                </fieldset>
+
+                                <fieldset id="fieldContato">
+                                    <legend>Contato</legend>
+                                    <div><label class="bloco" for="aluno_telefone">Telefone de Contato: <span
+                                                class="obrigatorio">*</span></label><input class="campo" type="text"
+                                            maxlength="15" id="aluno_telefone" name="aluno_telefone"
+                                            placeholder="(00) 0000-0000"></div>
+                                    <div><label class="bloco" for="aluno_celular">Telefone Celular:</label><input
+                                            class="campo" type="text" maxlength="15" id="aluno_celular"
+                                            name="aluno_celular" placeholder="(00) 00000-0000"></div>
+                                    <div><label class="bloco" for="aluno_comercial">Telefone Comercial:</label><input
+                                            class="campo" type="text" maxlength="15" id="aluno_comercial"
+                                            name="aluno_comercial"></div>
+                                    <div><label class="bloco" for="aluno_email">E-mail:</label><input class="campo"
+                                            type="email" maxlength="200" id="aluno_email" name="aluno_email"
+                                            placeholder="exemplo@dominio.com" style="width:300px;"></div>
+                                </fieldset>
+                            </div>
+
+                            <!-- ESCOLARIDADE -->
+                            <div id="divEscolaridade" class="content_abas abas_hidden">
+                                <fieldset>
+                                    <legend>Nível de Escolaridade</legend>
+                                    <div><label class="bloco" for="aluno_escolaridade">Escolaridade: <span
+                                                class="obrigatorio">*</span></label>
+                                        <select class="campo" id="aluno_escolaridade" name="aluno_escolaridade"
+                                            style="width: 350px;">
+                                            <option value="">SELECIONE...</option>
+                                            <option value="2">Ensino Fundamental I (1º ao 5º) - Incompleto</option>
+                                            <option value="16">Ensino Fundamental II (6º ao 9º) - Incompleto</option>
+                                            <option value="8">Ensino Fundamental II (6º ao 9º) - Completo</option>
+                                            <option value="4">Ensino Médio - Incompleto</option>
+                                            <option value="5">Ensino Médio - Completo</option>
+                                            <option value="13">Ensino Superior - Incompleto</option>
+                                            <option value="12">Ensino Superior - Completo</option>
+                                        </select>
+                                    </div>
+                                </fieldset>
+                            </div>
+
+                            <!-- PERFIL -->
+                            <div id="divPerfil" class="content_abas abas_hidden">
+                                <fieldset id="fieldPne">
+                                    <legend>Pessoa com Deficiência</legend>
+                                    <div><label class="bloco">Possui deficiência? <span
+                                                class="obrigatorio">*</span></label>
+                                        <span id="spanPne"><label for="aluno_pne_S"><input class="radio campo"
+                                                    type="radio" value="S" id="aluno_pne_S" name="aluno_pne">
+                                                Sim</label><label for="aluno_pne_N"><input class="radio campo"
+                                                    type="radio" value="N" id="aluno_pne_N" name="aluno_pne" checked="">
+                                                Não</label></span>
+                                    </div>
+                                    <div id="id_pneTipos" style="display: none;">
+                                        <div><label for="aluno_pne_tipos_6"><input type="checkbox" value="6"
+                                                    id="aluno_pne_tipos_6" name="aluno_pne_tipos[]"> Deficiência
+                                                Intelectual</label></div>
+                                        <div><label for="aluno_pne_tipos_7"><input type="checkbox" value="7"
+                                                    id="aluno_pne_tipos_7" name="aluno_pne_tipos[]"> Deficiência
+                                                Física</label></div>
+                                        <div><label for="aluno_pne_tipos_2"><input type="checkbox" value="2"
+                                                    id="aluno_pne_tipos_2" name="aluno_pne_tipos[]"> Deficiência
+                                                Auditiva</label></div>
+                                        <div><label for="aluno_pne_tipos_5"><input type="checkbox" value="5"
+                                                    id="aluno_pne_tipos_5" name="aluno_pne_tipos[]"> Surdez</label>
+                                        </div>
+                                        <div><label for="aluno_pne_tipos_1"><input type="checkbox" value="1"
+                                                    id="aluno_pne_tipos_1" name="aluno_pne_tipos[]"> Baixa Visão</label>
+                                        </div>
+                                        <div><label for="aluno_pne_tipos_8"><input type="checkbox" value="8"
+                                                    id="aluno_pne_tipos_8" name="aluno_pne_tipos[]"> Cegueira</label>
+                                        </div>
+                                        <div><label for="aluno_pne_tipos_9"><input type="checkbox" value="9"
+                                                    id="aluno_pne_tipos_9" name="aluno_pne_tipos[]">
+                                                Surdocegueira</label></div>
+                                        <div><label for="aluno_pne_tipos_10"><input type="checkbox" value="10"
+                                                    id="aluno_pne_tipos_10" name="aluno_pne_tipos[]"> Outro</label><span
+                                                id="spanPneMultiplas">Quais? <input class="campo" type="text"
+                                                    name="aluno_pne_tipos_outro" id="aluno_pne_tipos_outro"
+                                                    value=""></span></div>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset id="fieldPerfil">
+                                    <legend>Perfil</legend>
+                                    <div><label class="bloco">O Aluno ou sua família recebe auxílio financeiro por meio
+                                            de algum programa de transferência de renda? <span
+                                                class="obrigatorio">*</span></label>
+                                        <span id="spanBolsaRenda"><label
+                                                for="aluno_auxilio_financeiro_transferencia_renda_S"><input
+                                                    class="radio campo" type="radio" value="S"
+                                                    id="aluno_auxilio_financeiro_transferencia_renda_S"
+                                                    name="aluno_auxilio_financeiro_transferencia_renda">
+                                                Sim</label><label
+                                                for="aluno_auxilio_financeiro_transferencia_renda_N"><input
+                                                    class="radio campo" type="radio" value="N"
+                                                    id="aluno_auxilio_financeiro_transferencia_renda_N"
+                                                    name="aluno_auxilio_financeiro_transferencia_renda" checked="">
+                                                Não</label></span>
+                                    </div>
+                                    <div id="divBolsaRenda" style="display: none;">
+                                        <div class="checkboxAway"><label for="aluno_auxilio_bolsa_familia"><input
+                                                    type="checkbox" value="10" id="aluno_auxilio_bolsa_familia"
+                                                    name="auxilioTipo[]"> Bolsa Família</label></div>
+                                        <div id="divDsAuxilioBolsaFamilia"><label class="bloco"
+                                                for="aluno_auxilio_pis_bolsa_familia">NIS/PIS: <span
+                                                    class="obrigatorio">*</span></label><input class="campo" type="text"
+                                                maxlength="29" id="aluno_auxilio_pis_bolsa_familia"
+                                                name="aluno_auxilio_pis_bolsa_familia" value=""></div>
+                                        <div class="checkboxAway"><label for="aluno_auxilio_bpc"><input type="checkbox"
+                                                    value="8" id="aluno_auxilio_bpc" name="auxilioTipo[]"> Benefício de
+                                                Prestação Continuada - BPC</label></div>
+                                        <div><label class="bloco" for="aluno_auxilio_outro"><input type="checkbox"
+                                                    value="11" id="aluno_auxilio_outro" name="auxilioTipo[]">
+                                                Outro:</label><input class="campo" type="text"
+                                                id="aluno_auxilio_outro_texto" name="aluno_auxilio_outro_texto" value=""
+                                                style="display: none;"></div>
+                                    </div>
+                                    <div><label class="bloco">Pertence a população do Campo? <span
+                                                class="obrigatorio">*</span></label>
+                                        <span id="spanPopulacaoCampo"><label for="aluno_populacao_campo_S"><input
+                                                    class="radio campo" type="radio" value="S"
+                                                    id="aluno_populacao_campo_S" name="aluno_populacao_campo">
+                                                Sim</label><label for="aluno_populacao_campo_N"><input
+                                                    class="radio campo" type="radio" value="N"
+                                                    id="aluno_populacao_campo_N" name="aluno_populacao_campo"
+                                                    checked=""> Não</label></span>
+                                    </div>
+                                    <div id="divPopulacaoCampo" class="checkboxAway" style="display: none;">
+                                        <div><label for="aluno_populacao_campo_tipo_13"><input type="checkbox"
+                                                    value="13" id="aluno_populacao_campo_tipo_13"
+                                                    name="pronaCampoSituacoes[]"> Trabalhador Extrativista</label></div>
+                                        <div><label for="aluno_populacao_campo_tipo_15"><input type="checkbox"
+                                                    value="15" id="aluno_populacao_campo_tipo_15"
+                                                    name="pronaCampoSituacoes[]"> Trabalhador Silvicultor</label></div>
+                                        <div><label for="aluno_populacao_campo_tipo_16"><input type="checkbox"
+                                                    value="16" id="aluno_populacao_campo_tipo_16"
+                                                    name="pronaCampoSituacoes[]"> Trabalhador Pescador</label></div>
+                                        <div><label for="aluno_populacao_campo_tipo_14"><input type="checkbox"
+                                                    value="14" id="aluno_populacao_campo_tipo_14"
+                                                    name="pronaCampoSituacoes[]"> Trabalhador Aquicultor</label></div>
+                                        <div><label for="aluno_populacao_campo_tipo_12"><input type="checkbox"
+                                                    value="12" id="aluno_populacao_campo_tipo_12"
+                                                    name="pronaCampoSituacoes[]"> Trabalhador Agricultor
+                                                Familiar</label></div>
+                                    </div>
+                                    <div><label class="bloco">Está desempregado? <span
+                                                class="obrigatorio">*</span></label>
+                                        <span id="spanDesempregado"><label for="aluno_desempregado_S"><input
+                                                    class="radio campo" type="radio" value="1" id="aluno_desempregado_S"
+                                                    name="aluno_desempregado"> Sim</label><label
+                                                for="aluno_desempregado_N"><input class="radio campo" type="radio"
+                                                    value="0" id="aluno_desempregado_N" name="aluno_desempregado"
+                                                    checked=""> Não</label></span>
+                                    </div>
+                                    <div id="divSeguroDesemprego" style="display: none;">
+                                        <label class="bloco">Está Recebendo Seguro Desemprego? <span
+                                                class="obrigatorio">*</span></label>
+                                        <span id="spanDesempregado2"><label for="aluno_seguro_desemprego_S"><input
+                                                    class="radio campo" type="radio" value="1"
+                                                    id="aluno_seguro_desemprego_S" name="aluno_seguro_desemprego">
+                                                Sim</label><label for="aluno_seguro_desemprego_N"><input
+                                                    class="radio campo" type="radio" value="0"
+                                                    id="aluno_seguro_desemprego_N" name="aluno_seguro_desemprego"
+                                                    checked=""> Não</label></span>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset id="fieldEtnia">
+                                    <legend>Declaração de Etnia</legend>
+                                    <div><label class="bloco">É membro de povo indígena? <span
+                                                class="obrigatorio">*</span></label>
+                                        <span id="spanIndigena"><label for="aluno_povo_indigena_S"><input
+                                                    class="radio campo" type="radio" value="1"
+                                                    id="aluno_povo_indigena_S" name="aluno_povo_indigena">
+                                                Sim</label><label for="aluno_povo_indigena_N"><input class="radio campo"
+                                                    type="radio" value="0" id="aluno_povo_indigena_N"
+                                                    name="aluno_povo_indigena" checked=""> Não</label></span>
+                                    </div>
+                                    <div id="divPovoIndigenaEspecificacao" style="display: none;"><label class="bloco"
+                                            for="aluno_povo_indigena_texto">Escreva o nome do povo indígena conforme a
+                                            FUNAI <span class="obrigatorio">*</span></label><input class="campo"
+                                            type="text" id="aluno_povo_indigena_texto" name="aluno_povo_indigena_texto"
+                                            value=""></div>
+                                    <div><label class="bloco">É membro de comunidade Quilombola? <span
+                                                class="obrigatorio">*</span></label>
+                                        <span id="spanQuilombola"><label for="aluno_comunidade_quilombola_S"><input
+                                                    class="radio campo" type="radio" value="1"
+                                                    id="aluno_comunidade_quilombola_S"
+                                                    name="aluno_comunidade_quilombola"> Sim</label><label
+                                                for="aluno_comunidade_quilombola_N"><input class="radio campo"
+                                                    type="radio" value="0" id="aluno_comunidade_quilombola_N"
+                                                    name="aluno_comunidade_quilombola" checked=""> Não</label></span>
+                                    </div>
+                                    <div id="divComunidadeQuilombolaEspecificacao" style="display: none;"><label
+                                            class="bloco" for="aluno_comunidade_quilombola_texto">Escreva o nome da
+                                            comunidade quilombola <span class="obrigatorio">*</span></label><input
+                                            class="campo" type="text" id="aluno_comunidade_quilombola_texto"
+                                            name="aluno_comunidade_quilombola_texto" value=""></div>
+                                </fieldset>
+
+                                <fieldset id="fieldSetReservista">
+                                    <legend>Dados Reservista</legend>
+                                    <div><label class="bloco">Possui Certificado de Reservista ou Atirador de Tiros de
+                                            Guerra? <span class="obrigatorio">*</span></label>
+                                        <span id="spanReservista"><label for="aluno_soldado_cidadao_S"><input
+                                                    class="radio campo" type="radio" value="S"
+                                                    id="aluno_soldado_cidadao_S" name="aluno_soldado_cidadao">
+                                                Sim</label><label for="aluno_soldado_cidadao_N"><input
+                                                    class="radio campo" type="radio" value="N"
+                                                    id="aluno_soldado_cidadao_N" name="aluno_soldado_cidadao"
+                                                    checked=""> Não</label></span>
+                                    </div>
+                                    <div id="divReservista" style="display: none;">
+                                        <div><label class="bloco"
+                                                for="aluno_soldado_cidadao_numero_certificado_reservista">Nº Certificado
+                                                de Reservista <span class="obrigatorio">*</span></label><input
+                                                class="campo" type="text" maxlength="30"
+                                                id="aluno_soldado_cidadao_numero_certificado_reservista"
+                                                name="aluno_soldado_cidadao_numero_certificado_reservista"></div>
+                                        <div><label class="bloco" for="aluno_soldado_cidadao_dt_emissao_reservista">Data
+                                                de Emissão <span class="obrigatorio">*</span></label><input
+                                                class="campo alternate" type="date"
+                                                id="aluno_soldado_cidadao_dt_emissao_reservista"
+                                                name="aluno_soldado_cidadao_dt_emissao_reservista"></div>
+                                    </div>
+                                </fieldset>
+                            </div>
+
+                            <!-- CONFIRMAÇÃO - TOTALMENTE VAZIA -->
+                            <div id="divConfirmacao" class="content_abas abas_hidden">
+                                <div class="confirmacao-vazia">
+                                    <div class="confirmacao-icone">📋</div>
+                                    <p><strong>Nenhum dado para confirmar</strong></p>
+                                    <p>Esta área está propositalmente vazia conforme solicitado.</p>
+                                    <p>Utilize os botões abaixo para navegar ou finalizar o processo.</p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- BARRA DE NAVEGAÇÃO -->
+                <div id="panelInferior_header" class="panel-header">
+                    <div id="panelInferior_headerContent"
+                        style="display: flex; justify-content: space-between; align-items: center;">
+                        <div style="display: flex; gap: 10px;">
+                            <input type="button" id="btAnterior" value="Anterior" class="botaoMaior"
+                                style="background: #6c757d; color: white;">
+                            <input type="button" id="btProximo" value="Próximo" class="botaoMaior"
+                                style="background: #28a745; color: white;">
+                            <input type="button" id="btSalvar" value="Salvar" class="botaoMaior"
+                                style="background: #28a745; color: white; display: none;">
+                        </div>
+                        <div>
+                            <input type="button" id="btNovaPreMatricula" value="Nova Pré-Matrícula" class="botaoMaior"
+                                style="background: #ff9800; color: white; font-weight: bold;">
+                            <input type="button" id="btVoltar" value="Cancelar" class="botaoMaior"
+                                style="background: #dc3545; color: white;">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- JANELA FLUTUANTE (MODAL) -->
-<div id="modalConfirmacao" class="modal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <span class="close-modal">&times;</span>
-            <h2>✝ Confirmação ✝</h2>
-        </div>
-        <div class="modal-body">
-            <p>Iesus est via, veritas et vitae</p>
-        </div>
-        <div class="modal-footer">
-            <button id="btnSalvarPDF" class="modal-button">📄 Salvar PDF</button>
+    <!-- JANELA FLUTUANTE (MODAL) -->
+    <div id="modalConfirmacao" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close-modal">&times;</span>
+                <h2>✝ Confirmação ✝</h2>
+            </div>
+            <div class="modal-body">
+                <p>Iesus est via, veritas et vitae</p>
+            </div>
+            <div class="modal-footer">
+                <button id="btnSalvarPDF" class="modal-button">📄 Salvar PDF</button>
+            </div>
         </div>
     </div>
-</div>
 
-<script>
-    // Função para gerar PDF com a frase solicitada
-    function gerarEbaixarPDF() {
-        const conteudoPDF = `
+    <script>
+        // Função para gerar PDF com a frase solicitada
+        function gerarEbaixarPDF() {
+            const conteudoPDF = `
             <!DOCTYPE html>
             <html>
             <head>
@@ -770,186 +1065,188 @@
                         };
                         document.body.appendChild(btnBaixar);
                     };
-                </script>
+                <\/script>
             </body>
             </html>
         `;
 
-        const novaAba = window.open();
-        novaAba.document.write(conteudoPDF);
-        novaAba.document.close();
-    }
-
-    // Script principal do simulador
-    (function() {
-        const abaBolsa = document.getElementById('bolsaFormacaoIdapp');
-        const menuLateralTitle = document.getElementById('files-panel_title');
-        const menuContainer = document.getElementById('arvoreMenu');
-        const matriculaLink = document.getElementById('MatriculaIdApp');
-        const subMenu = document.getElementById('MatriculaIdApp_sub');
-        const cadastrarPreMatricula = document.getElementById('CadastrarPreMatriculaIdApp');
-        const ondeEstouSpan = document.getElementById('mainPanel_title');
-        const telaPesquisa = document.getElementById('telaPesquisa');
-        const telaForm = document.getElementById('telaFormulario');
-        const selectUF = document.getElementById('uf');
-        const selectMunicipio = document.getElementById('municipio');
-        const botaoPesquisar = document.getElementById('botaoPesquisar');
-        const tabelaGrid = document.getElementById('gridListarPreMatriculas_Grid');
-        const gridBody = document.getElementById('gridBody');
-
-        const btAnterior = document.getElementById('btAnterior');
-        const btProximo = document.getElementById('btProximo');
-        const btSalvar = document.getElementById('btSalvar');
-        const btNovaPreMatricula = document.getElementById('btNovaPreMatricula');
-        const btVoltar = document.getElementById('btVoltar');
-
-        const modal = document.getElementById('modalConfirmacao');
-        const closeModal = document.querySelector('.close-modal');
-        const btnSalvarPDF = document.getElementById('btnSalvarPDF');
-
-        const abas = document.querySelectorAll('.tab-menu li');
-        const conteudos = {
-            divDadosPessoais: document.getElementById('divDadosPessoais'),
-            divEscolaridade: document.getElementById('divEscolaridade'),
-            divPerfil: document.getElementById('divPerfil'),
-            divConfirmacao: document.getElementById('divConfirmacao')
-        };
-
-        let step = 0;
-
-        function abrirModal() { modal.style.display = 'block'; }
-        function fecharModal() { modal.style.display = 'none'; }
-
-        closeModal.onclick = fecharModal;
-        window.onclick = function(event) { if (event.target == modal) fecharModal(); }
-        btnSalvarPDF.onclick = function() { gerarEbaixarPDF(); fecharModal(); };
-
-        function initPerfilInteractions() {
-            const pneSim = document.getElementById('aluno_pne_S');
-            const pneNao = document.getElementById('aluno_pne_N');
-            const pneTipos = document.getElementById('id_pneTipos');
-            if(pneSim && pneNao) { pneSim.addEventListener('change', () => { if(pneSim.checked) pneTipos.style.display = 'block'; }); pneNao.addEventListener('change', () => { if(pneNao.checked) pneTipos.style.display = 'none'; }); }
-
-            const auxilioSim = document.getElementById('aluno_auxilio_financeiro_transferencia_renda_S');
-            const auxilioNao = document.getElementById('aluno_auxilio_financeiro_transferencia_renda_N');
-            const divBolsaRenda = document.getElementById('divBolsaRenda');
-            if(auxilioSim && auxilioNao) { auxilioSim.addEventListener('change', () => { if(auxilioSim.checked) divBolsaRenda.style.display = 'block'; }); auxilioNao.addEventListener('change', () => { if(auxilioNao.checked) divBolsaRenda.style.display = 'none'; }); divBolsaRenda.style.display = 'none'; }
-
-            const outroAuxilio = document.getElementById('aluno_auxilio_outro');
-            const outroTexto = document.getElementById('aluno_auxilio_outro_texto');
-            if(outroAuxilio) { outroAuxilio.addEventListener('change', () => { if(outroAuxilio.checked) outroTexto.style.display = 'inline-block'; else outroTexto.style.display = 'none'; }); }
-
-            const campSim = document.getElementById('aluno_populacao_campo_S');
-            const campNao = document.getElementById('aluno_populacao_campo_N');
-            const divCampo = document.getElementById('divPopulacaoCampo');
-            if(campSim && campNao) { campSim.addEventListener('change', () => { if(campSim.checked) divCampo.style.display = 'block'; }); campNao.addEventListener('change', () => { if(campNao.checked) divCampo.style.display = 'none'; }); divCampo.style.display = 'none'; }
-
-            const desempSim = document.getElementById('aluno_desempregado_S');
-            const desempNao = document.getElementById('aluno_desempregado_N');
-            const divSeguro = document.getElementById('divSeguroDesemprego');
-            if(desempSim && desempNao) { desempSim.addEventListener('change', () => { if(desempSim.checked) divSeguro.style.display = 'block'; }); desempNao.addEventListener('change', () => { if(desempNao.checked) divSeguro.style.display = 'none'; }); divSeguro.style.display = 'none'; }
-
-            const indSim = document.getElementById('aluno_povo_indigena_S');
-            const indNao = document.getElementById('aluno_povo_indigena_N');
-            const divInd = document.getElementById('divPovoIndigenaEspecificacao');
-            if(indSim && indNao) { indSim.addEventListener('change', () => { if(indSim.checked) divInd.style.display = 'block'; }); indNao.addEventListener('change', () => { if(indNao.checked) divInd.style.display = 'none'; }); divInd.style.display = 'none'; }
-
-            const quiSim = document.getElementById('aluno_comunidade_quilombola_S');
-            const quiNao = document.getElementById('aluno_comunidade_quilombola_N');
-            const divQui = document.getElementById('divComunidadeQuilombolaEspecificacao');
-            if(quiSim && quiNao) { quiSim.addEventListener('change', () => { if(quiSim.checked) divQui.style.display = 'block'; }); quiNao.addEventListener('change', () => { if(quiNao.checked) divQui.style.display = 'none'; }); divQui.style.display = 'none'; }
-
-            const resSim = document.getElementById('aluno_soldado_cidadao_S');
-            const resNao = document.getElementById('aluno_soldado_cidadao_N');
-            const divRes = document.getElementById('divReservista');
-            if(resSim && resNao) { resSim.addEventListener('change', () => { if(resSim.checked) divRes.style.display = 'block'; }); resNao.addEventListener('change', () => { if(resNao.checked) divRes.style.display = 'none'; }); divRes.style.display = 'none'; });
+            const novaAba = window.open();
+            novaAba.document.write(conteudoPDF);
+            novaAba.document.close();
         }
 
-        const radioSim = document.getElementById('isCadastrarNomeSocial');
-        const radioNao = document.getElementById('notCadastrarNomeSocial');
-        const boxNomeSocial = document.getElementById('box_nome_social');
-        if(radioSim && radioNao) { radioSim.addEventListener('change', () => { if(radioSim.checked) boxNomeSocial.style.display = 'block'; }); radioNao.addEventListener('change', () => { if(radioNao.checked) boxNomeSocial.style.display = 'none'; }); }
+        // Script principal do simulador
+        (function () {
+            const abaBolsa = document.getElementById('bolsaFormacaoIdapp');
+            const menuLateralTitle = document.getElementById('files-panel_title');
+            const menuContainer = document.getElementById('arvoreMenu');
+            const matriculaLink = document.getElementById('MatriculaIdApp');
+            const subMenu = document.getElementById('MatriculaIdApp_sub');
+            const cadastrarPreMatricula = document.getElementById('CadastrarPreMatriculaIdApp');
+            const ondeEstouSpan = document.getElementById('mainPanel_title');
+            const telaPesquisa = document.getElementById('telaPesquisa');
+            const telaForm = document.getElementById('telaFormulario');
+            const selectUF = document.getElementById('uf');
+            const selectMunicipio = document.getElementById('municipio');
+            const botaoPesquisar = document.getElementById('botaoPesquisar');
+            const tabelaGrid = document.getElementById('gridListarPreMatriculas_Grid');
+            const gridBody = document.getElementById('gridBody');
 
-        window.refreshCaptcha = function() {
-            const randomCode = Math.random().toString(36).substring(2, 8).toUpperCase();
-            const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='200' height='50'><rect width='200' height='50' fill='#333'/><text x='20' y='35' font-family='monospace' font-size='28' fill='#ff9800' font-weight='bold'>${randomCode}</text></svg>`;
-            const captchaImage = document.getElementById('captchaImage');
-            if(captchaImage) captchaImage.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
-            const captchaInput = document.getElementById('aluno_captcha');
-            if(captchaInput) captchaInput.dataset.captchaReal = randomCode;
-        };
+            const btAnterior = document.getElementById('btAnterior');
+            const btProximo = document.getElementById('btProximo');
+            const btSalvar = document.getElementById('btSalvar');
+            const btNovaPreMatricula = document.getElementById('btNovaPreMatricula');
+            const btVoltar = document.getElementById('btVoltar');
 
-        window.simularBusca = function() {
-            const captchaDigitado = document.getElementById('aluno_captcha').value;
-            const captchaReal = document.getElementById('aluno_captcha').dataset.captchaReal || 'S4T3C';
-            if(captchaDigitado.toUpperCase() === captchaReal) {
-                alert('✅ Captcha válido! Simulando preenchimento automático.');
-                document.getElementById('aluno_nome_completo').value = 'ALUNO TESTE AUTOMATIZADO';
-                document.getElementById('aluno_nome_mae').value = 'MARIA DA SILVA TESTE';
-                document.getElementById('aluno_dt_nascimento').value = '1990-01-01';
+            const modal = document.getElementById('modalConfirmacao');
+            const closeModal = document.querySelector('.close-modal');
+            const btnSalvarPDF = document.getElementById('btnSalvarPDF');
 
-                // >>> Ajuste para compatibilidade com a automação Python <<<
-                // Garante que o select #aluno_municipio (do endereço) tenha um valor não vazio
-                const alunoMunicipioSelect = document.getElementById('aluno_municipio'); // Este é o select do endereço
-                if (alunoMunicipioSelect) {
-                    // Adiciona uma opção "SIMULADO" se não houver opções ou se a primeira for vazia
-                    // (para garantir que sempre haja algo para selecionar)
-                    let foundGoianesia = false;
-                    for (let i = 0; i < alunoMunicipioSelect.options.length; i++) {
-                        if (alunoMunicipioSelect.options[i].value === "1503093") {
-                            foundGoianesia = true;
-                            break;
+            const abas = document.querySelectorAll('.tab-menu li');
+            const conteudos = {
+                divDadosPessoais: document.getElementById('divDadosPessoais'),
+                divEscolaridade: document.getElementById('divEscolaridade'),
+                divPerfil: document.getElementById('divPerfil'),
+                divConfirmacao: document.getElementById('divConfirmacao')
+            };
+
+            let step = 0;
+
+            function abrirModal() { modal.style.display = 'block'; }
+            function fecharModal() { modal.style.display = 'none'; }
+
+            closeModal.onclick = fecharModal;
+            window.onclick = function (event) { if (event.target == modal) fecharModal(); }
+            btnSalvarPDF.onclick = function () { gerarEbaixarPDF(); fecharModal(); };
+
+            function initPerfilInteractions() {
+                const pneSim = document.getElementById('aluno_pne_S');
+                const pneNao = document.getElementById('aluno_pne_N');
+                const pneTipos = document.getElementById('id_pneTipos');
+                if (pneSim && pneNao) { pneSim.addEventListener('change', () => { if (pneSim.checked) pneTipos.style.display = 'block'; }); pneNao.addEventListener('change', () => { if (pneNao.checked) pneTipos.style.display = 'none'; }); }
+
+                const auxilioSim = document.getElementById('aluno_auxilio_financeiro_transferencia_renda_S');
+                const auxilioNao = document.getElementById('aluno_auxilio_financeiro_transferencia_renda_N');
+                const divBolsaRenda = document.getElementById('divBolsaRenda');
+                if (auxilioSim && auxilioNao) { auxilioSim.addEventListener('change', () => { if (auxilioSim.checked) divBolsaRenda.style.display = 'block'; }); auxilioNao.addEventListener('change', () => { if (auxilioNao.checked) divBolsaRenda.style.display = 'none'; }); divBolsaRenda.style.display = 'none'; }
+
+                const outroAuxilio = document.getElementById('aluno_auxilio_outro');
+                const outroTexto = document.getElementById('aluno_auxilio_outro_texto');
+                if (outroAuxilio) { outroAuxilio.addEventListener('change', () => { if (outroAuxilio.checked) outroTexto.style.display = 'inline-block'; else outroTexto.style.display = 'none'; }); }
+
+                const campSim = document.getElementById('aluno_populacao_campo_S');
+                const campNao = document.getElementById('aluno_populacao_campo_N');
+                const divCampo = document.getElementById('divPopulacaoCampo');
+                if (campSim && campNao) { campSim.addEventListener('change', () => { if (campSim.checked) divCampo.style.display = 'block'; }); campNao.addEventListener('change', () => { if (campNao.checked) divCampo.style.display = 'none'; }); divCampo.style.display = 'none'; }
+
+                const desempSim = document.getElementById('aluno_desempregado_S');
+                const desempNao = document.getElementById('aluno_desempregado_N');
+                const divSeguro = document.getElementById('divSeguroDesemprego');
+                if (desempSim && desempNao) { desempSim.addEventListener('change', () => { if (desempSim.checked) divSeguro.style.display = 'block'; }); desempNao.addEventListener('change', () => { if (desempNao.checked) divSeguro.style.display = 'none'; }); divSeguro.style.display = 'none'; }
+
+                const indSim = document.getElementById('aluno_povo_indigena_S');
+                const indNao = document.getElementById('aluno_povo_indigena_N');
+                const divInd = document.getElementById('divPovoIndigenaEspecificacao');
+                if (indSim && indNao) { indSim.addEventListener('change', () => { if (indSim.checked) divInd.style.display = 'block'; }); indNao.addEventListener('change', () => { if (indNao.checked) divInd.style.display = 'none'; }); divInd.style.display = 'none'; }
+
+                const quiSim = document.getElementById('aluno_comunidade_quilombola_S');
+                const quiNao = document.getElementById('aluno_comunidade_quilombola_N');
+                const divQui = document.getElementById('divComunidadeQuilombolaEspecificacao');
+                if (quiSim && quiNao) { quiSim.addEventListener('change', () => { if (quiSim.checked) divQui.style.display = 'block'; }); quiNao.addEventListener('change', () => { if (quiNao.checked) divQui.style.display = 'none'; }); divQui.style.display = 'none'; }
+
+                const resSim = document.getElementById('aluno_soldado_cidadao_S');
+                const resNao = document.getElementById('aluno_soldado_cidadao_N');
+                const divRes = document.getElementById('divReservista');
+                if (resSim && resNao) { resSim.addEventListener('change', () => { if (resSim.checked) divRes.style.display = 'block'; }); resNao.addEventListener('change', () => { if (resNao.checked) divRes.style.display = 'none'; }); divRes.style.display = 'none'; }
+            }
+
+            const radioSim = document.getElementById('isCadastrarNomeSocial');
+            const radioNao = document.getElementById('notCadastrarNomeSocial');
+            const boxNomeSocial = document.getElementById('box_nome_social');
+            if (radioSim && radioNao) { radioSim.addEventListener('change', () => { if (radioSim.checked) boxNomeSocial.style.display = 'block'; }); radioNao.addEventListener('change', () => { if (radioNao.checked) boxNomeSocial.style.display = 'none'; }); }
+
+            window.refreshCaptcha = function () {
+                const randomCode = Math.random().toString(36).substring(2, 8).toUpperCase();
+                const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='200' height='50'><rect width='200' height='50' fill='#333'/><text x='20' y='35' font-family='monospace' font-size='28' fill='#ff9800' font-weight='bold'>${randomCode}</text></svg>`;
+                const captchaImage = document.getElementById('captchaImage');
+                if (captchaImage) captchaImage.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
+                const captchaInput = document.getElementById('aluno_captcha');
+                if (captchaInput) captchaInput.dataset.captchaReal = randomCode;
+            };
+
+            // window.simularBusca = function () {
+            //     const captchaDigitado = document.getElementById('aluno_captcha').value;
+            //     const captchaReal = document.getElementById('aluno_captcha').dataset.captchaReal || 'S4T3C';
+            //     if (captchaDigitado.toUpperCase() === captchaReal) {
+            //         alert('✅ Captcha válido! Simulando preenchimento automático.');
+            //         document.getElementById('aluno_nome_completo').value = 'ALUNO TESTE AUTOMATIZADO';
+            //         document.getElementById('aluno_nome_mae').value = 'MARIA DA SILVA TESTE';
+            //         document.getElementById('aluno_dt_nascimento').value = '1990-01-01';
+            //     } else { alert('❌ Captcha inválido. Código correto: ' + captchaReal); }
+            // };
+
+            window.simularBusca = function () {
+                const captchaDigitado = document.getElementById('aluno_captcha').value;
+                const captchaReal = document.getElementById('aluno_captcha').dataset.captchaReal || 'S4T3C';
+
+                if (captchaDigitado.toUpperCase() === captchaReal) {
+                    alert('✅ Captcha válido! Simulando preenchimento automático.');
+
+                    // Preenchimentos que você já fazia
+                    document.getElementById('aluno_nome_completo').value = 'ALUNO TESTE AUTOMATIZADO';
+                    document.getElementById('aluno_nome_mae').value = 'MARIA DA SILVA TESTE';
+                    document.getElementById('aluno_dt_nascimento').value = '1990-01-01';
+
+                    // >>> Ajuste para compatibilidade com a automação Python <<<
+                    // Preenche também o select #aluno_municipio (endereço do aluno)
+                    const alunoMunicipioSelect = document.getElementById('aluno_municipio');
+                    if (alunoMunicipioSelect) {
+                        // Se ainda não existir uma opção com value "1503093", cria
+                        let foundGoianesia = false;
+                        for (let i = 0; i < alunoMunicipioSelect.options.length; i++) {
+                            if (alunoMunicipioSelect.options[i].value === "1503093") {
+                                foundGoianesia = true;
+                                break;
+                            }
                         }
+                        if (!foundGoianesia) {
+                            const opt = document.createElement('option');
+                            opt.value = "1503093";
+                            opt.textContent = "GOIANÉSIA DO PARÁ (Simulado)";
+                            alunoMunicipioSelect.appendChild(opt);
+                        }
+                        // Seleciona a opção de Goianésia do Pará
+                        alunoMunicipioSelect.value = "1503093";
                     }
-                    if (!foundGoianesia) {
-                        const opt = document.createElement('option');
-                        opt.value = "1503093"; // Valor de Goianésia do Pará
-                        opt.textContent = "GOIANÉSIA DO PARÁ (Simulado)";
-                        alunoMunicipioSelect.appendChild(opt);
-                    }
-                    // Seleciona a opção de Goianésia do Pará
-                    alunoMunicipioSelect.value = "1503093";
+
+                } else {
+                    alert('❌ Captcha inválido. Código correto: ' + captchaReal);
                 }
+            };
 
-            } else { 
-                alert('❌ Captcha inválido. Código correto: ' + captchaReal); 
-            }
-        };
+            window.carregarMunicipiosForm = function () {
+                const uf = document.getElementById('aluno_uf').value;
+                const municipioSelect = document.getElementById('aluno_municipio');
+                if (municipioSelect) {
+                    municipioSelect.innerHTML = '<option value="">SELECIONE...</option>';
+                    if (uf) { const cidades = [`${uf} - Cidade A`, `${uf} - Cidade B`, `${uf} - Capital`]; cidades.forEach(c => { const option = document.createElement('option'); option.value = c; option.textContent = c; municipioSelect.appendChild(option); }); }
+                }
+            };
 
-        window.carregarMunicipiosForm = function() {
-            const uf = document.getElementById('aluno_uf').value;
-            const municipioSelect = document.getElementById('aluno_municipio');
-            if(municipioSelect) {
-                municipioSelect.innerHTML = '<option value="">SELECIONE...</option>';
-                if(uf) { const cidades = [`${uf} - Cidade A`, `${uf} - Cidade B`, `${uf} - Capital`]; cidades.forEach(c => { const option = document.createElement('option'); option.value = c; option.textContent = c; municipioSelect.appendChild(option); }); }
-            }
-        };
+            if (abaBolsa) { abaBolsa.addEventListener('click', function (e) { e.preventDefault(); menuLateralTitle.style.display = 'block'; menuContainer.style.display = 'block'; document.querySelectorAll('.abaPrincipal').forEach(li => li.classList.remove('abaAtivaEsquerda')); document.getElementById('bolsaFormacaoIdappLi').classList.add('abaAtivaEsquerda'); }); }
+            if (matriculaLink) { matriculaLink.addEventListener('click', function () { if (subMenu) subMenu.style.display = 'block'; }); }
+            if (cadastrarPreMatricula) { cadastrarPreMatricula.addEventListener('click', function (e) { e.preventDefault(); ondeEstouSpan.innerHTML = ' - Bolsa Formação - Matrícula - Cadastrar Pré-Matrícula'; telaPesquisa.style.display = 'block'; telaForm.style.display = 'none'; }); }
 
-        if(abaBolsa) { abaBolsa.addEventListener('click', function(e) { e.preventDefault(); menuLateralTitle.style.display = 'block'; menuContainer.style.display = 'block'; document.querySelectorAll('.abaPrincipal').forEach(li => li.classList.remove('abaAtivaEsquerda')); document.getElementById('bolsaFormacaoIdappLi').classList.add('abaAtivaEsquerda'); }); }
-        if(matriculaLink) { matriculaLink.addEventListener('click', function() { if(subMenu) subMenu.style.display = 'block'; }); }
-        if(cadastrarPreMatricula) { cadastrarPreMatricula.addEventListener('click', function(e) { e.preventDefault(); ondeEstouSpan.innerHTML = ' - Bolsa Formação - Matrícula - Cadastrar Pré-Matrícula'; telaPesquisa.style.display = 'block'; telaForm.style.display = 'none'; }); }
+            function popularMunicipios() { const ufValue = selectUF.value; if (ufValue === 'PA') selectMunicipio.innerHTML = '<option value="">SELECIONE...</option><option value="1503093">GOIANÉSIA DO PARÁ</option><option value="1501402">BELÉM</option>'; else selectMunicipio.innerHTML = '<option value="">SELECIONE...</option>'; }
+            selectUF.addEventListener('change', popularMunicipios);
+            selectMunicipio.innerHTML = '<option value="">SELECIONE...</option>';
 
-        // Mova a função popularMunicipios para cá, dentro do bloco (function() { ... })();
-        function popularMunicipios() {
-            const ufValue = selectUF.value;
-            if(ufValue === 'PA') {
-                selectMunicipio.innerHTML = '<option value="">SELECIONE...</option><option value="1503093">GOIANÉSIA DO PARÁ</option><option value="1501402">BELÉM</option>';
-            } else {
-                selectMunicipio.innerHTML = '<option value="">SELECIONE...</option>';
-            }
-        }
-
-        // Mova estas chamadas para cá, dentro do bloco (function() { ... })();
-        selectUF.addEventListener('change', popularMunicipios);
-        // selectMunicipio.innerHTML = '<option value="">SELECIONE...</option>'; // Esta linha pode ser removida se popularMunicipios() já for chamada no init
-        popularMunicipios(); // Adicione esta linha para popular o município inicial se a UF já estiver selecionada
-
-        // Função para carregar a tabela com a estrutura correta do Sistec
-        function carregarTabela() {
-            const ufSelecionada = selectUF.value;
-            const municipioSelecionado = selectMunicipio.value;
-            if(ufSelecionada === 'PA' && municipioSelecionado === '1503093') {
-                const linha = `
+            // Função para carregar a tabela com a estrutura correta do Sistec
+            function carregarTabela() {
+                const ufSelecionada = selectUF.value;
+                const municipioSelecionado = selectMunicipio.value;
+                if (ufSelecionada === 'PA' && municipioSelecionado === '1503093') {
+                    const linha = `
                     <tr class="altRow">
                         <td style="padding: 0px 10px;"><div style="text-align: center;">INSTITUTO FEDERAL DO PARÁ - CAMPUS TUCURUÍ</div></td>
                         <td style="padding: 0px 10px;"><div style="text-align: center;">AGENTE DE DESENVOLVIMENTO COOPERATIVISTA N1/2026 (4029)</div></td>
@@ -970,81 +1267,82 @@
                         </td>
                     </tr>
                 `;
-                gridBody.innerHTML = linha;
-                tabelaGrid.style.display = 'table';
-                const btnCadastrar = document.getElementById('btnCadastrarAlunoSimulado');
-                if(btnCadastrar) btnCadastrar.addEventListener('click', () => abrirFormularioPreMatricula());
-            } else { 
-                gridBody.innerHTML = '<tr><td colspan="10" style="text-align: center;">Nenhum resultado encontrado. Selecione PA e GOIANÉSIA DO PARÁ.</td></tr>';
-                tabelaGrid.style.display = 'table';
+                    gridBody.innerHTML = linha;
+                    tabelaGrid.style.display = 'table';
+                    const btnCadastrar = document.getElementById('btnCadastrarAlunoSimulado');
+                    if (btnCadastrar) btnCadastrar.addEventListener('click', () => abrirFormularioPreMatricula());
+                } else {
+                    gridBody.innerHTML = '<tr><td colspan="10" style="text-align: center;">Nenhum resultado encontrado. Selecione PA e GOIANÉSIA DO PARÁ.</td></tr>';
+                    tabelaGrid.style.display = 'table';
+                }
             }
-        }
-        botaoPesquisar.addEventListener('click', carregarTabela);
+            botaoPesquisar.addEventListener('click', carregarTabela);
 
-        function abrirFormularioPreMatricula() {
-            telaPesquisa.style.display = 'none';
-            telaForm.style.display = 'block';
-            ondeEstouSpan.innerHTML = ' - Bolsa Formação - Matrícula - Cadastrar Pré-Matrícula (Formulário)';
-            step = 0;
-            mostrarAba(0);
-            atualizarBotoesNavegacao();
-            refreshCaptcha();
-            initPerfilInteractions();
-        }
-
-        function mostrarAba(index) {
-            const abasArray = ['divDadosPessoais', 'divEscolaridade', 'divPerfil', 'divConfirmacao'];
-            Object.keys(conteudos).forEach(key => { conteudos[key].classList.add('abas_hidden'); });
-            if(conteudos[abasArray[index]]) conteudos[abasArray[index]].classList.remove('abas_hidden');
-            document.querySelectorAll('.tab-menu li').forEach((li, i) => { if(i === index) li.classList.add('selected'); else li.classList.remove('selected'); });
-        }
-
-        function atualizarBotoesNavegacao() {
-            if(step === 0) { btAnterior.disabled = true; btAnterior.style.opacity = '0.5'; } else { btAnterior.disabled = false; btAnterior.style.opacity = '1'; }
-            if(step === 3) { btProximo.style.display = 'none'; btSalvar.style.display = 'inline-block'; } else { btProximo.style.display = 'inline-block'; btSalvar.style.display = 'none'; }
-        }
-
-        abas.forEach((aba, idx) => {
-            aba.addEventListener('click', () => {
-                step = idx;
-                mostrarAba(step);
+            function abrirFormularioPreMatricula() {
+                telaPesquisa.style.display = 'none';
+                telaForm.style.display = 'block';
+                ondeEstouSpan.innerHTML = ' - Bolsa Formação - Matrícula - Cadastrar Pré-Matrícula (Formulário)';
+                step = 0;
+                mostrarAba(0);
                 atualizarBotoesNavegacao();
-            });
-        });
+                refreshCaptcha();
+                initPerfilInteractions();
+            }
 
-        btAnterior.addEventListener('click', () => { if(step > 0) { step--; mostrarAba(step); atualizarBotoesNavegacao(); } });
-        btProximo.addEventListener('click', () => { if(step < 3) { step++; mostrarAba(step); atualizarBotoesNavegacao(); } });
+            function mostrarAba(index) {
+                const abasArray = ['divDadosPessoais', 'divEscolaridade', 'divPerfil', 'divConfirmacao'];
+                Object.keys(conteudos).forEach(key => { conteudos[key].classList.add('abas_hidden'); });
+                if (conteudos[abasArray[index]]) conteudos[abasArray[index]].classList.remove('abas_hidden');
+                document.querySelectorAll('.tab-menu li').forEach((li, i) => { if (i === index) li.classList.add('selected'); else li.classList.remove('selected'); });
+            }
 
-        btSalvar.addEventListener('click', () => { abrirModal(); });
+            function atualizarBotoesNavegacao() {
+                if (step === 0) { btAnterior.disabled = true; btAnterior.style.opacity = '0.5'; } else { btAnterior.disabled = false; btAnterior.style.opacity = '1'; }
+                if (step === 3) { btProximo.style.display = 'none'; btSalvar.style.display = 'inline-block'; } else { btProximo.style.display = 'inline-block'; btSalvar.style.display = 'none'; }
+            }
 
-        btNovaPreMatricula.addEventListener('click', () => {
-            step = 0;
-            mostrarAba(0);
-            atualizarBotoesNavegacao();
-            if(confirm('Deseja limpar todos os campos do formulário?')) {
-                document.querySelectorAll('#formPreMatricula input, #formPreMatricula select').forEach(el => {
-                    if(el.type !== 'radio' && el.type !== 'checkbox' && el.type !== 'file') el.value = '';
+            abas.forEach((aba, idx) => {
+                aba.addEventListener('click', () => {
+                    step = idx;
+                    mostrarAba(step);
+                    atualizarBotoesNavegacao();
                 });
-                document.querySelectorAll('#formPreMatricula input[type="radio"], #formPreMatricula input[type="checkbox"]').forEach(el => el.checked = false);
-                document.getElementById('notCadastrarNomeSocial').checked = true;
-                document.getElementById('box_nome_social').style.display = 'none';
-            }
-        });
+            });
 
-        btVoltar.addEventListener('click', () => {
-            if(confirm('Cancelar e voltar à tela de pesquisa?')) {
-                telaForm.style.display = 'none';
-                telaPesquisa.style.display = 'block';
-                ondeEstouSpan.innerHTML = '';
-            }
-        });
+            btAnterior.addEventListener('click', () => { if (step > 0) { step--; mostrarAba(step); atualizarBotoesNavegacao(); } });
+            btProximo.addEventListener('click', () => { if (step < 3) { step++; mostrarAba(step); atualizarBotoesNavegacao(); } });
 
-        menuLateralTitle.style.display = 'none';
-        menuContainer.style.display = 'none';
-        tabelaGrid.style.display = 'none';
-        btAnterior.disabled = true;
-        btAnterior.style.opacity = '0.5';
-    })();
-</script>
+            btSalvar.addEventListener('click', () => { abrirModal(); });
+
+            btNovaPreMatricula.addEventListener('click', () => {
+                step = 0;
+                mostrarAba(0);
+                atualizarBotoesNavegacao();
+                if (confirm('Deseja limpar todos os campos do formulário?')) {
+                    document.querySelectorAll('#formPreMatricula input, #formPreMatricula select').forEach(el => {
+                        if (el.type !== 'radio' && el.type !== 'checkbox' && el.type !== 'file') el.value = '';
+                    });
+                    document.querySelectorAll('#formPreMatricula input[type="radio"], #formPreMatricula input[type="checkbox"]').forEach(el => el.checked = false);
+                    document.getElementById('notCadastrarNomeSocial').checked = true;
+                    document.getElementById('box_nome_social').style.display = 'none';
+                }
+            });
+
+            btVoltar.addEventListener('click', () => {
+                if (confirm('Cancelar e voltar à tela de pesquisa?')) {
+                    telaForm.style.display = 'none';
+                    telaPesquisa.style.display = 'block';
+                    ondeEstouSpan.innerHTML = '';
+                }
+            });
+
+            menuLateralTitle.style.display = 'none';
+            menuContainer.style.display = 'none';
+            tabelaGrid.style.display = 'none';
+            btAnterior.disabled = true;
+            btAnterior.style.opacity = '0.5';
+        })();
+    </script>
 </body>
+
 </html>
